@@ -1,0 +1,1380 @@
+macro "macro"
+	elem 
+		name = "North+REP"
+		command = ".north"
+	elem 
+		name = "South+REP"
+		command = ".south"
+	elem 
+		name = "East+REP"
+		command = ".east"
+	elem 
+		name = "West+REP"
+		command = ".west"
+	elem 
+		name = "Northeast+REP"
+		command = ".northeast"
+	elem 
+		name = "Northwest+REP"
+		command = ".northwest"
+	elem 
+		name = "Southeast+REP"
+		command = ".southeast"
+	elem 
+		name = "Southwest+REP"
+		command = ".southwest"
+	elem 
+		name = "Center+REP"
+		command = ".center"
+
+
+menu "menu"
+	elem 
+		name = "&File"
+		command = ""
+		saved-params = "is-checked"
+	elem 
+		name = "&Options and Messages...\tF1"
+		command = ".options"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "&Quick screenshot\tF2"
+		command = ".screenshot auto"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "&Save screenshot as...\tShift+F2"
+		command = ".screenshot"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "&Quit"
+		command = ".quit"
+		category = "&File"
+		saved-params = "is-checked"
+	elem 
+		name = "&Icons"
+		command = ""
+		saved-params = "is-checked"
+	elem "icon32"
+		name = "&32x32"
+		command = ".winset \"mapwindow.map.icon-size=32\""
+		category = "&Icons"
+		can-check = true
+		group = "size"
+		saved-params = "is-checked"
+	elem "icon16"
+		name = "&16x16"
+		command = ".winset \"mapwindow.map.icon-size=16\""
+		category = "&Icons"
+		can-check = true
+		group = "size"
+		saved-params = "is-checked"
+	elem 
+		name = "&Stretch to fit"
+		command = ".winset \"mapwindow.map.icon-size=0\""
+		category = "&Icons"
+		is-checked = true
+		can-check = true
+		group = "size"
+		saved-params = "is-checked"
+
+
+window "BrowserPane"
+	elem "BrowserPane"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Browser"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "browser1"
+		type = BROWSER
+		pos = 0,0
+		size = 640x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		background-color = #000000
+		is-default = true
+		saved-params = ""
+		show-history = true
+
+window "ChatPane"
+	elem "ChatPane"
+		type = MAIN
+		pos = 418,0
+		size = 441x526
+		anchor1 = none
+		anchor2 = none
+		background-color = #000000
+		border = sunken
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "button4"
+		type = BUTTON
+		pos = 384,497
+		size = 57x31
+		anchor1 = 87,94
+		anchor2 = 100,100
+		font-family = "Times New Roman"
+		font-size = 10
+		font-style = "bold italic"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "O-E"
+		command = "Online-Enforcers"
+		is-flat = true
+	elem "button3"
+		type = BUTTON
+		pos = 380,465
+		size = 61x32
+		anchor1 = 86,88
+		anchor2 = 100,94
+		font-family = "Times New Roman"
+		font-size = 10
+		font-style = "bold italic"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "IMs"
+		command = "CheckIMs"
+		is-flat = true
+	elem "input4"
+		type = INPUT
+		pos = 64,497
+		size = 320x29
+		anchor1 = 15,94
+		anchor2 = 87,100
+		text-color = #ffffff
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		command = "Say"
+	elem "input3"
+		type = INPUT
+		pos = 64,465
+		size = 320x32
+		anchor1 = 15,88
+		anchor2 = 87,94
+		text-color = #ffffff
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		command = "OOC"
+	elem "label6"
+		type = LABEL
+		pos = -8,497
+		size = 72x29
+		anchor1 = 0,94
+		anchor2 = 15,100
+		font-family = "Times New Roman"
+		font-size = 10
+		font-style = "bold italic"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "Say"
+	elem "label5"
+		type = LABEL
+		pos = -8,465
+		size = 72x32
+		anchor1 = 0,88
+		anchor2 = 15,94
+		font-family = "Times New Roman"
+		font-size = 10
+		font-style = "bold italic"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "OOC"
+	elem "output1"
+		type = OUTPUT
+		pos = 0,0
+		size = 440x465
+		anchor1 = 0,0
+		anchor2 = 100,88
+		text-color = #ffffff
+		background-color = #000000
+		is-default = true
+		border = sunken
+		saved-params = "max-lines"
+
+window "Guide"
+	elem "Guide"
+		type = MAIN
+		pos = 418,0
+		size = 397x84
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+
+window "MainWindow2"
+	elem "MainWindow2"
+		type = MAIN
+		pos = 418,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "label2"
+		type = LABEL
+		pos = 0,0
+		size = 640x24
+		anchor1 = 0,0
+		anchor2 = 100,5
+		font-family = "Times New Roman"
+		font-size = 16
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "- Deadly Vengeance -"
+		image = 'Login\\Title.png'
+		image-mode = stretch
+	elem "child3"
+		type = CHILD
+		pos = 0,24
+		size = 640x456
+		anchor1 = 0,5
+		anchor2 = 100,100
+		background-color = #000000
+		border = sunken
+		saved-params = "splitter"
+		left = "MapPaneChild"
+		right = "StatPaneChild"
+		is-vert = true
+
+window "MapPane"
+	elem "MapPane"
+		type = MAIN
+		pos = 418,0
+		size = 663x610
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "mapwindow"
+		type = MAP
+		pos = 0,-8
+		size = 663x616
+		anchor1 = 0,0
+		anchor2 = 100,100
+		text-color = #000000
+		border = sunken
+		drop-zone = false
+		saved-params = "icon-size"
+
+window "MapPaneChild"
+	elem "MapPaneChild"
+		type = MAIN
+		pos = 418,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "child1"
+		type = CHILD
+		pos = 0,0
+		size = 640x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		background-color = #000000
+		border = sunken
+		saved-params = "splitter"
+		left = "MapPane"
+		is-vert = false
+
+window "OpeningWindow"
+	elem "OpeningWindow"
+		type = MAIN
+		pos = 418,0
+		size = 484x566
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Deadly Vengeance"
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		image = 'Login\\OpeningWindow.png'
+	elem "label3"
+		type = LABEL
+		pos = 0,468
+		size = 484x36
+		anchor1 = none
+		anchor2 = none
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "- What would you like to do? -"
+		image = 'Login\\Title.png'
+	elem "button27"
+		type = BUTTON
+		pos = 362,504
+		size = 122x64
+		anchor1 = 75,89
+		anchor2 = 100,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "-Exit -"
+		image = 'Login\\Buttons.png'
+		command = ".quit"
+	elem "button5"
+		type = BUTTON
+		pos = 241,504
+		size = 122x64
+		anchor1 = 50,89
+		anchor2 = 75,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "-Delete -"
+		image = 'Login\\Buttons.png'
+		command = "DeleteChar"
+	elem "button1"
+		type = BUTTON
+		pos = 121,504
+		size = 122x64
+		anchor1 = 25,89
+		anchor2 = 50,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Load -"
+		image = 'Login\\Buttons.png'
+		command = "LoadChar"
+	elem "button2"
+		type = BUTTON
+		pos = 0,504
+		size = 122x64
+		anchor1 = 0,89
+		anchor2 = 25,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- New -"
+		image = 'Login\\Buttons.png'
+		command = "NewChar"
+
+window "RaceWindow"
+	elem "RaceWindow"
+		type = MAIN
+		pos = 281,1
+		size = 785x563
+		anchor1 = none
+		anchor2 = none
+		background-color = #000000
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Choose A Race"
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+	elem "button29"
+		type = BUTTON
+		pos = 704,0
+		size = 80x56
+		anchor1 = 90,0
+		anchor2 = 100,10
+		font-style = "bold underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Unlockables"
+		image = 'Login\\Slots.png'
+		command = ""
+	elem "label8"
+		type = LABEL
+		pos = -6,192
+		size = 791x231
+		anchor1 = 0,34
+		anchor2 = 100,75
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = ""
+		image = 'Login\\RaceWindow.png'
+	elem "label7"
+		type = LABEL
+		pos = 0,-1
+		size = 704x57
+		anchor1 = 0,0
+		anchor2 = 90,10
+		font-style = "bold underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "- Please Choose A Race-"
+		image = 'Login\\Title.png'
+		image-mode = stretch
+	elem "button23"
+		type = BUTTON
+		pos = 691,423
+		size = 93x140
+		anchor1 = 88,75
+		anchor2 = 100,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Uub"
+		image = 'Login\\Login Races\\Ubb.dmi'
+		command = "UubP"
+	elem "button22"
+		type = BUTTON
+		pos = 521,55
+		size = 88x137
+		anchor1 = 66,10
+		anchor2 = 78,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Dragon"
+		image = 'Login\\Login Races\\Dragon.dmi'
+		command = "DragonP"
+	elem "button21"
+		type = BUTTON
+		pos = 606,423
+		size = 87x140
+		anchor1 = 77,75
+		anchor2 = 88,99
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Bardock"
+		image = 'Login\\Login Races\\Bardock.dmi'
+		command = "BardockP"
+	elem "button20"
+		type = BUTTON
+		pos = 0,56
+		size = 88x137
+		anchor1 = 0,10
+		anchor2 = 11,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Saiyan"
+		image = 'Login\\Login Races\\Android.dmi'
+		command = "SaiyanP"
+	elem "button19"
+		type = BUTTON
+		pos = 89,423
+		size = 82x141
+		anchor1 = 11,76
+		anchor2 = 22,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Namek"
+		image = 'Login\\Login Races\\Namek.dmi'
+		command = "NamekP"
+	elem "button18"
+		type = BUTTON
+		pos = 516,423
+		size = 89x140
+		anchor1 = 66,75
+		anchor2 = 77,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Kai"
+		image = 'Login\\Login Races\\Kai.dmi'
+		command = "KaiP"
+	elem "button17"
+		type = BUTTON
+		pos = 435,423
+		size = 80x140
+		anchor1 = 55,75
+		anchor2 = 65,99
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Saibaman"
+		image = 'Login\\Login Races\\Saiba.dmi'
+		command = "SaibaP"
+	elem "button16"
+		type = BUTTON
+		pos = 257,423
+		size = 89x140
+		anchor1 = 33,76
+		anchor2 = 44,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Xicor"
+		image = 'Login\\Login Races\\Xicor.dmi'
+		command = "XicorP"
+	elem "button15"
+		type = BUTTON
+		pos = 347,423
+		size = 87x140
+		anchor1 = 44,76
+		anchor2 = 55,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Demon"
+		image = 'Login\\Login Races\\Demon.dmi'
+		command = "DemonP"
+	elem "button14"
+		type = BUTTON
+		pos = 171,423
+		size = 86x140
+		anchor1 = 22,75
+		anchor2 = 33,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Majin"
+		image = 'Login\\Login Races\\Majin.dmi'
+		command = "MajinP"
+	elem "button13"
+		type = BUTTON
+		pos = 691,55
+		size = 94x137
+		anchor1 = 88,10
+		anchor2 = 100,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Bio-Android"
+		image = 'Login\\Login Races\\BAndroid.dmi'
+		command = "BioDroidP"
+	elem "button12"
+		type = BUTTON
+		pos = 431,56
+		size = 89x137
+		anchor1 = 55,10
+		anchor2 = 66,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Android"
+		image = 'Login\\Login Races\\Android.dmi'
+		command = "AndroidP"
+	elem "button11"
+		type = BUTTON
+		pos = 606,55
+		size = 87x137
+		anchor1 = 77,10
+		anchor2 = 88,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Changling"
+		image = 'Login\\Login Races\\Changling.dmi'
+		command = "ChanglingP"
+	elem "button10"
+		type = BUTTON
+		pos = 343,56
+		size = 87x137
+		anchor1 = 44,10
+		anchor2 = 55,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Tuffle"
+		image = 'Login\\Login Races\\Tuffle.dmi'
+		command = "TuffleP"
+	elem "button9"
+		type = BUTTON
+		pos = 261,55
+		size = 87x137
+		anchor1 = 33,10
+		anchor2 = 44,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "LegendarySSJ"
+		image = 'Login\\Login Races\\Legend.dmi'
+		command = "LegendP"
+	elem "button8"
+		type = BUTTON
+		pos = 171,55
+		size = 89x137
+		anchor1 = 22,10
+		anchor2 = 33,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Human"
+		image = 'Login\\Login Races\\Android.dmi'
+		command = "HumanP"
+	elem "button7"
+		type = BUTTON
+		pos = 84,56
+		size = 87x137
+		anchor1 = 11,10
+		anchor2 = 22,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Half-Saiyan"
+		image = 'Login\\Login Races\\Android.dmi'
+		command = "HalfSaiyanP"
+	elem "button6"
+		type = BUTTON
+		pos = -8,423
+		size = 96x140
+		anchor1 = 0,76
+		anchor2 = 11,100
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Dark-Angel"
+		image = 'Login\\Login Races\\Dark Angel.dmi'
+		command = "DarkAngelP"
+
+window "RaceWindow2"
+	elem "RaceWindow2"
+		type = MAIN
+		pos = 281,0
+		size = 785x563
+		anchor1 = none
+		anchor2 = none
+		background-color = #000000
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Choose A Race"
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+	elem "button30"
+		type = BUTTON
+		pos = 431,56
+		size = 89x137
+		anchor1 = 55,10
+		anchor2 = 66,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Zen-Oh-Sama"
+		command = "ZenP"
+	elem "label8"
+		type = LABEL
+		pos = -6,192
+		size = 791x231
+		anchor1 = 0,34
+		anchor2 = 100,75
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = ""
+		image = 'Login\\RaceWindow.png'
+	elem "label7"
+		type = LABEL
+		pos = 0,-1
+		size = 785x57
+		anchor1 = 0,0
+		anchor2 = 90,10
+		font-style = "bold underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "- Please Choose A Race-"
+		image-mode = stretch
+	elem "button20"
+		type = BUTTON
+		pos = 0,56
+		size = 88x137
+		anchor1 = 0,10
+		anchor2 = 11,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Konats"
+		command = "KonatsP"
+	elem "button12"
+		type = BUTTON
+		pos = 343,56
+		size = 89x137
+		anchor1 = 55,10
+		anchor2 = 66,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Jiren"
+		command = "JirenP"
+	elem "button9"
+		type = BUTTON
+		pos = 261,55
+		size = 87x137
+		anchor1 = 33,10
+		anchor2 = 44,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Feline"
+		command = "FelineP"
+	elem "button8"
+		type = BUTTON
+		pos = 171,55
+		size = 89x137
+		anchor1 = 22,10
+		anchor2 = 33,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "All-Star"
+		command = "AllStarP"
+	elem "button7"
+		type = BUTTON
+		pos = 84,56
+		size = 87x137
+		anchor1 = 11,10
+		anchor2 = 22,34
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "Evil-Saiyan"
+		command = "EvilSaiyanP"
+
+window "SlotWindow1"
+	elem "SlotWindow1"
+		type = MAIN
+		pos = 418,0
+		size = 514x448
+		anchor1 = none
+		anchor2 = none
+		background-color = #000000
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Select a Slot"
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+	elem "button28"
+		type = BUTTON
+		pos = 381,381
+		size = 131x67
+		anchor1 = 74,85
+		anchor2 = 100,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Go Back -"
+		image = 'Login\\Buttons.png'
+		command = "GoBack1"
+	elem "button26"
+		type = BUTTON
+		pos = 256,381
+		size = 130x67
+		anchor1 = 50,85
+		anchor2 = 75,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Slot 3 -"
+		image = 'Login\\Buttons.png'
+		command = "Slot3"
+	elem "button25"
+		type = BUTTON
+		pos = 128,381
+		size = 131x67
+		anchor1 = 25,85
+		anchor2 = 50,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Slot 2 -"
+		image = 'Login\\Buttons.png'
+		command = "Slot2"
+	elem "button24"
+		type = BUTTON
+		pos = 0,381
+		size = 130x67
+		anchor1 = 0,85
+		anchor2 = 25,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Slot 1 -"
+		image = 'Login\\Buttons.png'
+		command = "Slot1"
+	elem "label9"
+		type = LABEL
+		pos = -2,344
+		size = 516x34
+		anchor1 = 0,77
+		anchor2 = 100,84
+		font-style = "bold underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "- Which slot? -"
+		image = 'Login\\Title.png'
+	elem "label4"
+		type = LABEL
+		pos = 0,0
+		size = 514x344
+		anchor1 = 0,0
+		anchor2 = 100,77
+		border = sunken
+		saved-params = ""
+		text = ""
+		image = 'Login\\SlotWindow1.png'
+
+window "SlotWindow2"
+	elem "SlotWindow2"
+		type = MAIN
+		pos = 418,0
+		size = 482x440
+		anchor1 = none
+		anchor2 = none
+		background-color = #000000
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Select a Slot"
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+	elem "button28"
+		type = BUTTON
+		pos = 360,376
+		size = 122x64
+		anchor1 = 75,85
+		anchor2 = 100,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Go Back -"
+		image = 'Login\\Buttons.png'
+		command = "GoBack2"
+	elem "button26"
+		type = BUTTON
+		pos = 240,376
+		size = 122x64
+		anchor1 = 50,85
+		anchor2 = 75,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Slot 3 -"
+		image = 'Login\\Buttons.png'
+		command = "Slot6"
+	elem "button25"
+		type = BUTTON
+		pos = 120,376
+		size = 122x64
+		anchor1 = 25,85
+		anchor2 = 50,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Slot 2 -"
+		image = 'Login\\Buttons.png'
+		command = "Slot5"
+	elem "button24"
+		type = BUTTON
+		pos = 0,376
+		size = 122x64
+		anchor1 = 0,85
+		anchor2 = 25,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Slot 1 -"
+		image = 'Login\\Buttons.png'
+		command = "Slot4"
+	elem "label9"
+		type = LABEL
+		pos = 0,344
+		size = 482x36
+		anchor1 = 0,78
+		anchor2 = 100,86
+		font-style = "bold underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "- Which slot? -"
+		image = 'Login\\Title.png'
+		image-mode = stretch
+	elem "label4"
+		type = LABEL
+		pos = 0,0
+		size = 482x344
+		anchor1 = 0,0
+		anchor2 = 100,78
+		border = sunken
+		saved-params = ""
+		text = ""
+		image = 'Login\\SlotWindow2.png'
+
+window "SlotWindow3"
+	elem "SlotWindow3"
+		type = MAIN
+		pos = 418,0
+		size = 485x440
+		anchor1 = none
+		anchor2 = none
+		background-color = #000000
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Select a Slot"
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+	elem "button28"
+		type = BUTTON
+		pos = 362,376
+		size = 123x64
+		anchor1 = 75,85
+		anchor2 = 100,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Go Back -"
+		image = 'Login\\Buttons.png'
+		command = "GoBack3"
+	elem "button26"
+		type = BUTTON
+		pos = 242,376
+		size = 122x64
+		anchor1 = 50,85
+		anchor2 = 75,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Slot 3 -"
+		image = 'Login\\Buttons.png'
+		command = "Slot9"
+	elem "button25"
+		type = BUTTON
+		pos = 121,376
+		size = 123x64
+		anchor1 = 25,85
+		anchor2 = 50,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Slot 2 -"
+		image = 'Login\\Buttons.png'
+		command = "Slot8"
+	elem "button24"
+		type = BUTTON
+		pos = 0,376
+		size = 123x64
+		anchor1 = 0,85
+		anchor2 = 25,100
+		font-style = "underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = "is-checked"
+		text = "- Slot 1 -"
+		image = 'Login\\Buttons.png'
+		command = "Slot7"
+	elem "label9"
+		type = LABEL
+		pos = 0,344
+		size = 485x32
+		anchor1 = 0,78
+		anchor2 = 100,85
+		font-style = "bold underline"
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "- Which slot? -"
+		image = 'Login\\Title.png'
+	elem "label4"
+		type = LABEL
+		pos = 0,0
+		size = 485x344
+		anchor1 = 0,0
+		anchor2 = 100,78
+		border = sunken
+		saved-params = ""
+		text = ""
+		image = 'Login\\SlotWindow3.png'
+
+window "StatPane"
+	elem "StatPane"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Info"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "info1"
+		type = INFO
+		pos = 0,0
+		size = 640x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		font-family = "Times New Roman"
+		font-size = 10
+		text-color = #ffffff
+		background-color = #000000
+		is-default = true
+		border = sunken
+		saved-params = ""
+		highlight-color = #ff0000
+		tab-text-color = #ff0000
+		tab-background-color = #000000
+		tab-font-family = "Times New Roman"
+		tab-font-size = 10
+		allow-html = false
+
+window "StatPaneChild"
+	elem "StatPaneChild"
+		type = MAIN
+		pos = 418,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "child2"
+		type = CHILD
+		pos = 0,0
+		size = 632x480
+		anchor1 = 0,0
+		anchor2 = 99,100
+		background-color = #000000
+		saved-params = "splitter"
+		left = "StatPanes"
+		right = "ChatPane"
+		is-vert = false
+
+window "StatPanes"
+	elem "StatPanes"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "tab1"
+		type = TAB
+		pos = 0,0
+		size = 640x480
+		anchor1 = 0,0
+		anchor2 = 100,100
+		font-family = "Times New Roman"
+		font-size = 10
+		background-color = #ff0000
+		border = sunken
+		saved-params = ""
+		tabs = "StatPane,BrowserPane"
+		current-tab = "StatPane"
+
+window "TOut"
+	elem "TOut"
+		type = MAIN
+		pos = 418,0
+		size = 640x122
+		anchor1 = none
+		anchor2 = none
+		is-default = true
+		saved-params = "pos;size;is-minimized;is-maximized"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
+	elem "TOut"
+		type = OUTPUT
+		pos = 0,-1
+		size = 640x123
+		anchor1 = 0,0
+		anchor2 = 100,100
+		text-color = #ffffff
+		background-color = #000000
+		saved-params = "max-lines"
+
+window "mainwindow"
+	elem "mainwindow"
+		type = MAIN
+		pos = 281,0
+		size = 858x576
+		anchor1 = none
+		anchor2 = none
+		background-color = #000000
+		is-visible = false
+		is-default = true
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Deadly Vengeance"
+		macro = "macro"
+		menu = "menu"
+	elem "child4"
+		type = CHILD
+		pos = 0,0
+		size = 858x595
+		anchor1 = 0,0
+		anchor2 = 100,100
+		background-color = #000000
+		border = sunken
+		saved-params = "splitter"
+		left = "MainWindow2"
+		is-vert = false
+
+window "windowIM"
+	elem "windowIM"
+		type = MAIN
+		pos = 418,0
+		size = 479x338
+		anchor1 = none
+		anchor2 = none
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "DV Instant Messenger"
+	elem "label1"
+		type = LABEL
+		pos = 0,0
+		size = 480x32
+		anchor1 = 0,0
+		anchor2 = 100,9
+		font-family = "Times New Roman"
+		font-size = 14
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+		text = "- Instant Messenger -"
+	elem "IMin"
+		type = INPUT
+		pos = 0,312
+		size = 479x32
+		anchor1 = 0,92
+		anchor2 = 100,100
+		font-family = "Times New Roman"
+		font-size = 10
+		text-color = #ff0000
+		background-color = #000000
+		border = sunken
+		saved-params = ""
+	elem "IMout"
+		type = OUTPUT
+		pos = 0,32
+		size = 479x280
+		anchor1 = 0,9
+		anchor2 = 100,92
+		text-color = #800040
+		background-color = #000000
+		border = sunken
+		saved-params = "max-lines"
+
+window "Bug Report"
+	elem "Bug Report"
+		type = MAIN
+		pos = 316,34
+		size = 640x479
+		anchor1 = none
+		anchor2 = none
+		background-color = #000000
+		is-visible = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Bug Report"
+		statusbar = false
+		can-close = false
+	elem "button5"
+		type = BUTTON
+		pos = 484,408
+		size = 140x32
+		anchor1 = 76,85
+		anchor2 = 98,92
+		text-color = #e2e2e2
+		background-color = #141414
+		border = sunken
+		saved-params = "is-checked"
+		text = "Cancel"
+		command = "CancelBugReport"
+	elem "button4"
+		type = BUTTON
+		pos = 328,408
+		size = 140x32
+		anchor1 = 51,85
+		anchor2 = 73,92
+		text-color = #e2e2e2
+		background-color = #141414
+		border = sunken
+		saved-params = "is-checked"
+		text = "Submit"
+		command = "SubmitBugReport"
+	elem "label3"
+		type = LABEL
+		pos = 324,328
+		size = 124x20
+		anchor1 = 51,68
+		anchor2 = 70,73
+		text-color = #e2e2e2
+		background-color = #141414
+		border = line
+		saved-params = ""
+		text = "Authur"
+	elem "button3"
+		type = BUTTON
+		pos = 136,328
+		size = 136x112
+		anchor1 = 21,68
+		anchor2 = 43,92
+		text-color = #e2e2e2
+		background-color = #141414
+		is-visible = false
+		border = sunken
+		saved-params = "is-checked"
+		text = "Screen Shot"
+		command = "ScreenShotBug"
+	elem "label2"
+		type = LABEL
+		pos = 68,184
+		size = 60x20
+		anchor1 = 11,38
+		anchor2 = 20,43
+		text-color = #e2e2e2
+		background-color = #141414
+		saved-params = ""
+		text = "Description:"
+	elem "input5"
+		type = INPUT
+		pos = 136,80
+		size = 480x232
+		anchor1 = 21,17
+		anchor2 = 96,65
+		text-color = #e2e2e2
+		background-color = #141414
+		border = line
+		saved-params = ""
+		multi-line = true
+		no-command = true
+	elem "label1"
+		type = LABEL
+		pos = 96,32
+		size = 32x20
+		anchor1 = 15,7
+		anchor2 = 20,11
+		text-color = #e2e2e2
+		background-color = #141414
+		saved-params = ""
+		text = "Title:"
+	elem "input4"
+		type = INPUT
+		pos = 136,32
+		size = 480x20
+		anchor1 = 21,7
+		anchor2 = 96,11
+		text-color = #e2e2e2
+		background-color = #141414
+		border = line
+		saved-params = ""
+		no-command = true
+

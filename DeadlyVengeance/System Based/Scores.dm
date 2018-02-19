@@ -1,0 +1,32 @@
+mob/PC/var/tmp/NoCrossSave=0
+mob/PC/proc
+	SetScores()
+		if(!src.NoCrossSave)
+			var/list/params = list("Chat Bar 1"=src.ChatBar1,"Banked Zenni"=src.banked_zenni,"Tournament Wins"=src.tournywin,"Zenni"=src.zenni,"Last Character"=src.name,"Arena Battle Wins"=src.arena_wins)
+			params+=list("Chat Bar 2"=ChatBar2,"Kills"=src.pkills,"Hours Played"=src.Hrs,"Muted"=src.muted,"Jailed"=src.jailed,"Mute Time"=src.mute_time,"Jail Time"=src.jail_time)
+			if(src.key!=world.host) params+=list("GM Level"=src.GMLevel)
+			var/list/level=params2list(world.GetScores(src.key,list2params(list("Version","Level"))))
+			if(src.level>text2num(level["Level"])) params+=list("Level"=src.level)
+			if(text2num(src.version)>text2num(level["Version"])) params+=list("Version"=src.version)
+			world.SetScores(src.key,list2params(params))
+	GetScores()
+		var/list/params=list("Banked Zenni","Hours Played","Muted","Mute Time","Jailed","Jail Time","GM Level","Arena Battle Wins","Chat Bar 1","Chat Bar 2","Version","Logged In")
+		params+=list("Kills","Last Character","Zenni","Tournament Wins","Level")
+		var/list/Vars=params2list(world.GetScores(src.key,list2params(params)))
+		if(Vars.len)
+			src.muted=text2num(Vars["Muted"])
+			src.jailed=text2num(Vars["Jailed"])
+			src.mute_time=text2num(Vars["Mute Time"])
+			src.jail_time=text2num(Vars["Jail Time"])
+			//if(text2num(Vars["Version"]>=6.27))
+			src.GMLevel=text2num(Vars["GM Level"])
+			src.arena_wins=text2num(Vars["Arena Battle Wins"])
+			src.Hrs=text2num(Vars["Hours Played"])
+			if(Vars["Chat Bar 1"]) src.ChatBar1=Vars["Chat Bar 1"]
+			if(Vars["Chat Bar 2"]) src.ChatBar2=Vars["Chat Bar 2"]
+			//if(Vars["Logged In"]=="1")
+			//	spawn()	alert(src,"You are currently logged in another server, all cross-server saving is disabled for this session")
+			//	src.NoCrossSave=1
+			/*else */src.banked_zenni=text2num(Vars["Banked Zenni"])
+		else spawn()
+			alert(src,"We were unable to retrieve your cross-server information. The server may be unable to connect to the hub. Please try again later if you feel this is wrong.")

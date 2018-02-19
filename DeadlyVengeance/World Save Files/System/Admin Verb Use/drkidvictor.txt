@@ -1,0 +1,40 @@
+Edit:
+				Deadd, GM Rank 10 Edited Deadd, GM Rank 10.
+				Reason: Variable: powerlevel (If Given)
+				Other Information: Typesof: 1500 as num to 9.86546e+030 as num (If Given)
+				Admin Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Target Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Date/Time: 03:10:40 02/19/2018
+
+Edit:
+				Deadd, GM Rank 10 Edited Deadd, GM Rank 10.
+				Reason: Variable: speed (If Given)
+				Other Information: Typesof: 5 as num to 65 as num (If Given)
+				Admin Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Target Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Date/Time: 03:12:22 02/19/2018
+
+Edit:
+				Deadd, GM Rank 10 Edited Deadd, GM Rank 10.
+				Reason: Variable: speed (If Given)
+				Other Information: Typesof: 65 as num to 5 as num (If Given)
+				Admin Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Target Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Date/Time: 03:12:22 02/19/2018
+
+Edit:
+				Deadd, GM Rank 10 Edited Deadd, GM Rank 10.
+				Reason: Variable: speed_max (If Given)
+				Other Information: Typesof: 5 as num to 65 as num (If Given)
+				Admin Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Target Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Date/Time: 03:13:13 02/19/2018
+
+Edit:
+				Deadd, GM Rank 10 Edited Deadd, GM Rank 10.
+				Reason: Variable: speed (If Given)
+				Other Information: Typesof: 5 as num to 65 as num (If Given)
+				Admin Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Target Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
+				Date/Time: 03:14:04 02/19/2018
+
