@@ -116,7 +116,7 @@ mob/PC/Login()
 			src.GMLevel=10
 			src.pranger="Red"
 			if(src.title=="Player") src.title = {"Owner"}
-		if("Sammy93"||"Gokuu93")
+		if("Jaea")
 			src.verbs += typesof(/mob/Cool/verb/)
 			src.verbs += typesof(/mob/GM1/verb/)
 			src.verbs += typesof(/mob/GM2/verb/)
