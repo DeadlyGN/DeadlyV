@@ -742,6 +742,11 @@ mob
 				M.ki_max = 9999999999999999999999999999
 				M.strength_max = 999999999999999999999999999999999999
 				M.defence_max = 9999999999999999999999999999999999999
+				M.fatigue_max = 9999999999999999999999999999999999999
+			Give_INF_Stamina(mob/PC/M in players)
+				set category ="Deadly"
+				set name ="Inf Stamina"
+				M.fatigue_max = 9999999999999999999999999999999999999
 			Change_Race()
 				set category = "Deadly"
 				if(usr.form_1) alert(usr,"You must revert first!");return

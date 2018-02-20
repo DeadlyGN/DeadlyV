@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
-LAST_COMPILE_TIME: 1519106408
-DIR: 3.0 Commands 3.0 Commands\3.2 Combat Commands 3.0 Commands\3.3 Technique Commands 3.0 Commands\3.3 Technique Commands\Basic Techniques 3.0 Commands\3.3 Technique Commands\Basic Techniques\Ki Attack 2.0 Player Character 2.0 Player Character\2.1 Character Attributes 
+LAST_COMPILE_TIME: 1519121574
+DIR: 4.0 NPCs\4.1 Earth NPCs 2.0 Player Character 2.0 Player Character\2.1 Character Attributes 5.0 Quests 1.0 System 1.0 System\1.2 Administration 1.0 System\1.3 Saving and Loading 1.0 System\1.6 Turfs 1.0 System\1.6 Turfs\1.61 Turfs 1.0 System\1.6 Turfs\1.61 Turfs\Floors 
 AUTO_FILE_DIR: ON
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 511.1385
-WINDOW: Ki Beam.dm;3.0 Commands\3.3 Technique Commands\Basic Techniques\Ki Attack\Ki Attack.dm;Beam.dmi
-FILE: Ki Beam.dm
+WINDOW: 3.0 Commands\3.4 Transformation Commands\3.41 Majin\Majin Transformation.dm;1.0 System\1.2 Administration\All stat.dm;3.0 Commands\3.4 Transformation Commands\Transform Command.dm;3.0 Commands\3.4 Transformation Commands\3.51 Bojack.dm;3.0 Commands\3.4 Transformation Commands\3.44 Half-Saiyan\Xicor Transformation.dm;3.0 Commands\3.4 Transformation Commands\3.51 Xicor\Xicor Trans.dm;3.0 Commands\3.4 Transformation Commands\3.44 Half-Saiyan\Xicor Revert.dm;3.0 Commands\3.4 Transformation Commands\3.51 Xicor\Xicor Revert.dm;3.0 Commands\3.4 Transformation Commands\3.47 Tuffle\Tuffle Transformation.dm;1.0 System\1.3 Saving and Loading\Check Proc.dm;1.0 System\1.6 Turfs\1.61 Turfs\Floors\HBTC.dm;4.0 NPCs\4.1 Earth NPCs\Light Teacher.dm;3.0 Commands\3.4 Transformation Commands\3.42 Saiyan\Bardock Revert.dm;3.0 Commands\3.4 Transformation Commands\3.53 Customs\Dark Angel Transformation.dm;3.0 Commands\3.4 Transformation Commands\Invert Power.dm;3.0 Commands\3.4 Transformation Commands\3.42 Saiyan\Saiyan Revert.dm;3.0 Commands\3.4 Transformation Commands\3.42 Saiyan\Saiyan Transformation.dm;3.0 Commands\3.4 Transformation Commands\3.43 Human\Human Revert.dm;3.0 Commands\3.4 Transformation Commands\More 2.dm;3.0 Commands\3.4 Transformation Commands\3.51 Kai\Kai Transformation.dm;3.0 Commands\3.4 Transformation Commands\3.51 Kai\Kai Revert.dm;3.0 Commands\3.4 Transformation Commands\3.42 Saiyan\Legend Transformation.dm;3.0 Commands\3.4 Transformation Commands\3.42 Saiyan\Bardock Transformation.dm;3.0 Commands\3.4 Transformation Commands\3.50 Android\Android Transformation.dm;3.0 Commands\3.4 Transformation Commands\3.43 Human\Human Transformation.dm;2.0 Player Character\2.1 Character Attributes\Hair Attributes.dm;3.0 Commands\3.4 Transformation Commands\3.44 Half-Saiyan\Half Saiyan Revert.dm;3.0 Commands\3.4 Transformation Commands\Revert Command.dm;2.0 Player Character\2.1 Character Attributes\Basic Attributes.dm;2.0 Player Character\2.1 Character Attributes\Statistics Panel.dm
+FILE: 2.0 Player Character\2.1 Character Attributes\Statistics Panel.dm
 */
 // END_INTERNALS

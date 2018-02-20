@@ -40,7 +40,7 @@ mob/Monster
 					if(level>=11250 && powerlevel < powerlevel_max * 0.1 && powering_up < 3)
 						powering_up ++
 						step_away(src,P)
-						src.powering_pl = 1
+						src.powering = 1
 						if(!src.doing) src.doing ++
 						src.Icon_State("enrage")
 						src.overlays += src.aura

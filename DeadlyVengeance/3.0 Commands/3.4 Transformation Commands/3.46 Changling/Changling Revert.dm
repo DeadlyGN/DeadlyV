@@ -1,16 +1,41 @@
 mob/proc/Changling_Revert()
 	if(src.KO)
-		src<<"No cheating"
+		src <<"No cheating"
 		return
-	if(src.form!="")
+	if(src.form_1)
+
 		src.frozen = 1
-		src.Icon_State("enrage")
-		sleep(17)
-		src.form = ""
-		src.overlays.Remove(small_purple_elec,big_purple_elec)
+		src.icon_state = "enrage"
+
+		sleep(10)
+
+		src.form_1 = 0
+		src.form_2 = 0
+		src.form_3 = 0
+		src.form_4 = 0
+		src.form_5 = 0
+		src.form_6 = 0
+
+		src.overlays -= small_blue_elec
+		src.overlays -= big_blue_elec
+
+		src.overlays -= small_red_elec
+		src.overlays -= big_red_elec
+
+		src.overlays -= small_purple_elec
+		src.overlays -= big_purple_elec
+
+		src.overlays -= mystic_elec
+
 		src.icon = 'Changling - Form 1.dmi'
 		src.Power_Redefine()
-		oview() << "[src.name] has reverted from their Transformed state."
-		src.Icon_State("")
+		src.Skin_Apply()
+
+		oview() << "[src.name] has reverted from his Transformed state."
+		src.icon_state = ""
 		src.frozen = 0
-		if(src.doing) src.doing --
+		src.doing = 0
+
+		return
+	else
+		return

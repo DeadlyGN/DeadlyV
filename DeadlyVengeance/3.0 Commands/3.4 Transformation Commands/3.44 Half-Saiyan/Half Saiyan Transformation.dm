@@ -10,7 +10,7 @@ mob/proc/Half_Saiyan_Trans()
 		return
 	else
 		if(!src.form_1)
-			if(src.powerlevel_max >= 60000)
+			if(src.powerlevel_max >= 17500000)
 				if(!src.ascended_ssj)
 					src.aura_on = 0
 					src.doing = 1
@@ -123,7 +123,7 @@ mob/proc/Half_Saiyan_Trans()
 					return
 		else
 			if(!src.form_2)
-				if(src.powerlevel_max >= 350000)
+				if(src.powerlevel_max >= 150000000)
 					src.doing = 1
 					src.icon_state = "enrage"
 					src.frozen = 1
@@ -193,7 +193,7 @@ mob/proc/Half_Saiyan_Trans()
 					return
 			else
 				if(!src.form_3)
-					if(src.powerlevel_max >= 750000)
+					if(src.powerlevel_max >= 200000000)
 						src.doing = 1
 						src.icon_state = "enrage"
 						src.frozen = 1
@@ -265,7 +265,7 @@ mob/proc/Half_Saiyan_Trans()
 
 				else
 					if(!src.form_4)
-						if(src.powerlevel_max >= 1750000)
+						if(src.powerlevel_max >= 350000000)
 							src.doing = 1
 							src.icon_state = "enrage"
 							src.frozen = 1
@@ -335,7 +335,7 @@ mob/proc/Half_Saiyan_Trans()
 					else
 						if(!src.form_5)
 							if(src.fused)
-								if(src.powerlevel_max >= 5000000)
+								if(src.powerlevel_max >= 500000000)
 									src.doing = 1
 									src.icon_state = "enrage"
 									src.frozen = 1
@@ -399,7 +399,7 @@ mob/proc/Half_Saiyan_Trans()
 									return
 							else
 								if(!src.form_5)
-									if(src.powerlevel_max >= 4900000 && src.mystic)
+									if(src.powerlevel_max >= 650000000 && src.mystic)
 										src.doing = 1
 										src.icon_state = "enrage"
 										src.frozen = 1

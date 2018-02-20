@@ -14,7 +14,6 @@ mob
 					set src in oview(1)
 					if(usr.race == "Demon"&&usr.chromosome=="Evil")
 						if(usr.karma == "Good" && usr.karma_rating >= 95)
-							usr.Force_Revert()
 							usr.learn_chaos_blitz = 1
 							usr.chromosome = "Chaos"
 							usr.icon = 'Chaos Demon 1.dmi'
@@ -40,7 +39,6 @@ mob
 					set src in oview(1)
 					if(usr.race == "Demon"&&usr.chromosome=="Good")
 						if(usr.karma == "Evil" && usr.karma_rating >= 95)
-							usr.Force_Revert()
 							usr.learn_chaos_blitz = 1
 							usr.chromosome = "Chaos"
 							usr.icon = 'Chaos Demon 1.dmi'

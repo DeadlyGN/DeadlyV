@@ -171,8 +171,6 @@ mob
 					C << "<FONT color = green>Guild Battle Information:<FONT color = White> [src] was defeated by [M]!"
 				guildb = 0
 				M.guildb = 0
-				M.FullHeal()
-				FullHeal()
 				src<< "<Font color=white>Your base power has been obtained."
 				M << "<Font color=white>Your base power has been obtained."
 				if(guildbrank >= M.guildbrank)
@@ -200,16 +198,13 @@ mob
 				if(M.previous_loc)
 					M.loc = M.previous_loc
 					M.z = M.last_z
-				if(M.powerlevel<=M.powerlevel_max) M.FullHeal()
 				M.previous_loc=null
 				previous_loc=null
-				FullHeal()
 				deathdone = 1
 				opponent = null
 				M.opponent = null
 				spawn(4)
 					if(dead)
-						FullHeal()
 						overlays -= halo
 						overlays -= halo
 						overlays -= halo
@@ -423,7 +418,6 @@ mob/PC/DeathCheck(mob/M)
 				overlays -= big_death_ball
 				overlays += halo
 				players << "<FONT color = red>Battle Information:<FONT color = White> [src] got destroyed by [M]!"
-		Force_Revert()
 		Basic_Death_vars()
 		sight &= ~BLIND
 		deaths ++
@@ -624,7 +618,6 @@ mob/PC/SmallKiDeathCheck(mob/M)
 				powerlevel = 50
 				overlays += halo
 				players << "<FONT color = red>Battle Information:<FONT color = White> [src] died at the hands of [M]!"
-		Force_Revert()
 		Basic_Death_vars()
 		sight &= ~BLIND
 		deaths ++
@@ -825,7 +818,6 @@ mob/PC/BigKiDeathCheck(mob/M)
 				powerlevel = 50
 				overlays += halo
 				players << "<FONT color = red>Battle Information:<FONT color = White> [src] died at the hands of [M]!"
-		Force_Revert()
 		Basic_Death_vars()
 		sight &= ~BLIND
 		deaths ++
@@ -969,12 +961,10 @@ mob/PC/AbsorbDeathCheck(mob/M)
 				M << "<I>You feel the Good inside of you begin to awaken..."
 				M.karma = "Good"
 				M.karma_rating = 0
-		spawn() FullHeal()
 		loc = locate(55,6,8)
 		if(race=="Android")
 			loc = locate(162,7,8)
 			dead = 0
-		Force_Revert()
 		overlays -= small_death_ball
 		overlays -= big_death_ball
 		powerlevel = 50
@@ -1006,7 +996,6 @@ mob
 				grav = 0
 				grav_popup = 0
 				players << "<FONT color = #F3982D>Training Information:<FONT color = White> [src] died whilst Gravity Training!"
-				spawn() FullHeal()
 				Follower_Check()
 				Basic_Death_vars()
 				if(race == "Android")
@@ -1044,7 +1033,6 @@ mob
 						overlays += halo
 						Gokus()
 						deaths ++
-				Force_Revert()
  /***************\
 |*****************|
 |**ABSORB  DEATH**|
@@ -1171,9 +1159,7 @@ mob/PC/CandyDeathCheck(mob/M)
 				M << "<I>You feel the Good inside of you begin to awaken..."
 				M.karma = "Good"
 				M.karma_rating = 0
-		spawn() FullHeal()
 		loc = locate(55,6,8)
-		Force_Revert()
 		overlays -= small_death_ball
 		overlays -= big_death_ball
 		powerlevel = 50
@@ -1363,7 +1349,6 @@ mob/PC/BigKiDeathCheck2(mob/M)
 				powerlevel = 50
 				overlays += halo
 				players << "<FONT color = red>Battle Information:<FONT color = White> [src] died at the hands of All Star!"
-		Force_Revert()
 		Basic_Death_vars()
 		sight &= ~BLIND
 		deaths ++

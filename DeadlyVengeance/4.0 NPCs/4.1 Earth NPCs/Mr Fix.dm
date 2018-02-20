@@ -237,7 +237,6 @@ mob
 				else src.verbs += new/mob/learn/verb/Advanced_Instant_Transmission
 			if(src.learn_powerup)
 				src.verbs += new/mob/learn/verb/Power_Up
-				src.verbs += new/mob/learn/verb/StopP_Up
 			if(src.learn_fuse) src.verbs += new/mob/learn/verb/Fuse
 			if(src.learn_advanced_it) src.verbs += new/mob/learn/verb/Advanced_Instant_Transmission
 			if(src.learn_Golden_Oozaru) src.verbs += new/mob/learn/Tuffle/verb/Golden_Oozaru

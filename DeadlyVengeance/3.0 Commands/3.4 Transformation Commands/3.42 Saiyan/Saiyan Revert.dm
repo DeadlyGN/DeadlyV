@@ -37,6 +37,7 @@ mob/proc/Saiyan_Revert()
 		src.overlays -= src.hair_ssj4
 
 
+
 		src.Power_Redefine()
 		src.Skin_Apply()
 		src.Hair_Apply()

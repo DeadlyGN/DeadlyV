@@ -125,7 +125,6 @@ mob/proc
 				src.reflect_max=0
 				src.block_max=0
 				src.counter_max=0
-				src.Force_Revert()
 				src.Power_Redefine()
 				src.form=""
 				src.unarmed_max=0
@@ -159,7 +158,6 @@ mob/proc
 				src.reflect_max=0
 				src.block_max=0
 				src.counter_max=0
-				src.Force_Revert()
 				src.Power_Redefine()
 				src.form=""
 				src.unarmed_max=0
@@ -185,7 +183,6 @@ mob/proc
 				src.whatLevels["Normal"]=src.level
 				if(src.form_1||src.form)
 					src.form="Revert"
-					src.Force_Revert()
 					src.form_1=0
 					src.form=""
 					if(src.race in list("Android","Bio-Android","Majin","Uub","Tuffle","Namek","Bio Warrior"))

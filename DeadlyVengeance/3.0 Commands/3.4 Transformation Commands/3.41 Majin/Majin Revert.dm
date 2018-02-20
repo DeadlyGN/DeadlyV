@@ -1,15 +1,39 @@
 mob/proc/Majin_Revert()
-	if(src.KO) return
-	if(src.form in list("Super Majin 2"))
+	if(src.KO)
+		return
+
+	if(src.form_3 && !src.form_4)
+
 		src.frozen = 1
-		src.Icon_State("enrage")
-		sleep(17)
-		src.form = "Super Majin"
-		src.aura_on = 1
-		call(src,"Aura")()
-		src.overlays.Remove(small_red_elec)
+		src.icon_state = "enrage"
+
+		sleep(10)
+
+		src.form_3 = 0
+
+		src.aura_on = 0
+		src.underlays -= aura
+		src.underlays -= ssj_aura
+
+		src.overlays -= small_blue_elec
+		src.overlays -= big_blue_elec
+
+		src.overlays -= small_red_elec
+		src.overlays -= big_red_elec
+
+		src.overlays -= mystic_elec
+
+		src.overlays -= src.hair_ssj3
+		src.overlays -= src.hair_ssj4
+
 		src.Power_Redefine()
-		oview() << "[src.name] has reverted from their Transformed state."
-		src.Icon_State("")
+		src.Skin_Apply()
+		src.Hair_Apply()
+
+		oview() << "[src.name] has reverted from his Transformed state."
+		src.icon_state = ""
 		src.frozen = 0
-		if(src.doing) src.doing --
+		src.doing = 0
+		return
+	else
+		return

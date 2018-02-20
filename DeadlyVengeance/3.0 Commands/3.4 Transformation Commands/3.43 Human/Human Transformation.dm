@@ -8,7 +8,7 @@ mob/proc/Human_Trans()
 		return
 	else
 		if(!src.form_1)
-			if(src.powerlevel_max >= 50000)
+			if(src.powerlevel_max >= 15000000)
 				src.doing = 1
 				src.icon_state = "enrage"
 				src.frozen = 1
@@ -47,7 +47,7 @@ mob/proc/Human_Trans()
 				return
 		else
 			if(!src.form_2)
-				if(src.powerlevel_max >= 2000000)
+				if(src.powerlevel_max >= 175000000)
 					src.doing = 1
 					src.icon_state = "enrage"
 					src.frozen = 1
@@ -86,7 +86,7 @@ mob/proc/Human_Trans()
 					return
 			else
 				if(!src.form_3)
-					if(src.powerlevel_max >= 4950000)
+					if(src.powerlevel_max >= 575000000)
 						src.doing = 1
 						src.icon_state = "enrage"
 						src.frozen = 1
@@ -127,7 +127,7 @@ mob/proc/Human_Trans()
 						return
 				else
 					if(!src.form_4)
-						if(src.powerlevel_max >= 15000000)
+						if(src.powerlevel_max >= 900000000)
 
 							src.doing = 1
 							src.icon_state = "enrage"
@@ -170,7 +170,7 @@ mob/proc/Human_Trans()
 
 					else
 						if(!src.form_5)
-							if(src.powerlevel_max >= 4900000)
+							if(src.powerlevel_max >= 1000000000)
 
 								src.doing = 1
 								src.icon_state = "enrage"

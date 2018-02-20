@@ -1,6 +1,5 @@
 proc
 	ResetLevels(mob/m)
-		m.Force_Revert()
 		m.form=""
 		m.pabsorbs=0
 		m.wishes=0

@@ -1,306 +1,293 @@
-mob/proc
-	Dragon_Revert()
-		if(src.KO)
-			src<<"No cheating"
-			return
-		if(src.form!="")
-			src.frozen = 1
-			src.Icon_State("enrage")
-			sleep(16)
-			src.form = ""
-			src.overlays -= small_blue_elec
-			src.overlays -= big_blue_elec
-			src.overlays -= small_red_elec
-			src.overlays -= big_red_elec
-			src.overlays -= small_purple_elec
-			src.overlays -= big_purple_elec
-			src.overlays -= mystic_elec
-			src.icon = 'Dragon.dmi'
-			src.Power_Redefine()
-			oview() << "[src.name] has reverted from their Transformed state."
-			src.Icon_State("")
-			src.frozen = 0
-			if(src.doing) src.doing --
-	Saibaman_Revert()
-		if(src.KO)
-			src<<"No cheating"
-			return
-		if(src.form!="")
-			src.frozen = 1
-			src.Icon_State("enrage")
-			sleep(16)
-			src.form = ""
-			src.overlays -= small_blue_elec
-			src.overlays -= big_blue_elec
-			src.overlays -= small_red_elec
-			src.overlays -= big_red_elec
-			src.overlays -= ely_red_elec
-			src.overlays -= ely_blue_elec
-			src.overlays -= mystic_elec
-			src.underlays -= sh2_aura
-			src.aura_on = 1
-			call(src,"Aura")()
-			src.Power_Redefine()
-			src.Hair_Apply()
-			oview() << "[src.name] has reverted from their Transformed state."
-			src.icon = 'Saibaman - Form 1.dmi'
-			src.Icon_State("")
-			src.frozen = 0
-			if(src.doing) src.doing --
-	Saibaman_Trans()
-		var/trans_time = 5
-		if(src.doing||src.buku||src.dual_training||src.selftraining||src.boxing||src.meditation||src.meditate||src.KO) return
-		switch(src.form)
-			if("")if(src.powerlevel_max >= 25000)
-				if(!src.doing) src.doing ++
-				src.Icon_State("enrage")
-				src.frozen = 1
-				sleep(trans_time)
-				src.powerlevel = src.powerlevel_max
-				src.ki = src.ki_max
-				src.strength = src.strength_max
-				src.defence = src.defence_max
-				src.critical = src.critical_max
-				src.dodge = src.dodge_max
-				src.reflect = src.reflect_max
-				src.block = src.block_max
-				src.form = "First Form"
-				src.powerlevel *= 100
-				src.ki *= 100
-				src.strength *= 100
-				src.defence *= 100
-				src.block += 7
-				src.dodge += 4
-				src.critical += 4
-				src.reflect += 7
-				src.counter += 4
-				src.speed = 3.8
-				view(6) << "<font color = green>[src.name] explodes into frist form!"
-				src.icon = 'Saibaman - Form 1.dmi'
-				new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("First Form")if(src.powerlevel_max >= 50000)
-				if(!src.doing) src.doing ++
-				src.Icon_State("enrage")
-				src.frozen = 1
-				sleep(trans_time)
-				src.powerlevel = src.powerlevel_max
-				src.ki = src.ki_max
-				src.strength = src.strength_max
-				src.defence = src.defence_max
-				src.critical = src.critical_max
-				src.dodge = src.dodge_max
-				src.reflect = src.reflect_max
-				src.block = src.block_max
-				src.form = "Red Form"
-				src.powerlevel *= 200
-				src.ki *= 200
-				src.strength *= 200
-				src.defence *= 200
-				src.block += 8
-				src.dodge += 6
-				src.critical += 6
-				src.reflect += 8
-				src.counter += 6
-				src.speed = 3.2
-				src.overlays += small_blue_elec
-				view(6) << "<font color = Blue>[src.name] explodes into their red form!"
-				src.icon = 'Saibaman - Form 2.dmi'
-				new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("Red Form")if(src.powerlevel_max >= 75000)
-				if(!src.doing) src.doing ++
-				src.Icon_State("enrage")
-				src.frozen = 1
-				sleep(trans_time)
-				src.powerlevel = src.powerlevel_max
-				src.ki = src.ki_max
-				src.strength = src.strength_max
-				src.defence = src.defence_max
-				src.critical = src.critical_max
-				src.dodge = src.dodge_max
-				src.reflect = src.reflect_max
-				src.block = src.block_max
-				src.form = "Blue Form"
-				src.powerlevel *= 400
-				src.ki *= 400
-				src.strength *= 400
-				src.defence *= 400
-				src.block += 6
-				src.dodge += 8
-				src.critical += 6
-				src.reflect += 6
-				src.counter += 8
-				src.speed = 2.8
-				src.overlays -= small_blue_elec
-				src.overlays += big_blue_elec
-				view(6) << "<font color = blue>[src.name] explodes into their blue form!"
-				src.icon = 'Saibaman - Form 3.dmi'
-				src.USSJ_Apply()
-				new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("Blue Form")if(src.powerlevel_max >= 100000)
-				if(!src.doing) src.doing ++
-				src.Icon_State("enrage")
-				src.frozen = 1
-				sleep(trans_time)
-				src.powerlevel = src.powerlevel_max
-				src.ki = src.ki_max
-				src.strength = src.strength_max
-				src.defence = src.defence_max
-				src.critical = src.critical_max
-				src.dodge = src.dodge_max
-				src.reflect = src.reflect_max
-				src.block = src.block_max
-				src.form = "Golden Form"
-				src.powerlevel *= 500
-				src.ki *= 500
-				src.strength *= 500
-				src.defence *= 500
-				src.block += 6
-				src.dodge += 8
-				src.critical += 6
-				src.reflect += 6
-				src.counter += 8
-				src.speed = 2.8
-				src.overlays -= small_blue_elec
-				src.overlays += big_blue_elec
-				view(6) << "<font color = blue>[src.name] explodes into their golden form!"
-				src.icon = 'Saibaman - Form 4.dmi'
-				src.USSJ_Apply()
-				new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("Golden Form")if(src.powerlevel_max >= 175000)
-				if(!src.doing) src.doing ++
-				src.Icon_State("enrage")
-				src.frozen = 1
-				sleep(trans_time)
-				src.powerlevel = src.powerlevel_max
-				src.ki = src.ki_max
-				src.strength = src.strength_max
-				src.defence = src.defence_max
-				src.critical = src.critical_max
-				src.dodge = src.dodge_max
-				src.reflect = src.reflect_max
-				src.block = src.block_max
-				src.form = "Black Form"
-				src.powerlevel *= 600
-				src.ki *= 600
-				src.strength *= 600
-				src.defence *= 600
-				src.block += 6
-				src.dodge += 8
-				src.critical += 6
-				src.reflect += 6
-				src.counter += 8
-				src.speed = 2.8
-				src.overlays -= small_blue_elec
-				src.overlays += big_blue_elec
-				view(6) << "<font color = blue>[src.name] explodes into their black form!"
-				src.icon = 'Saibaman - Form 5.dmi'
-				src.USSJ_Apply()
-				new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("Black Form")if(src.powerlevel_max >= 275000)
-				if(!src.doing) src.doing ++
-				src.Icon_State("enrage")
-				src.frozen = 1
-				sleep(trans_time)
-				src.powerlevel = src.powerlevel_max
-				src.ki = src.ki_max
-				src.strength = src.strength_max
-				src.defence = src.defence_max
-				src.critical = src.critical_max
-				src.dodge = src.dodge_max
-				src.reflect = src.reflect_max
-				src.block = src.block_max
-				src.form = "Hollow Form"
-				src.powerlevel *= 800
-				src.ki *= 800
-				src.strength *= 800
-				src.defence *= 800
-				src.block += 6
-				src.dodge += 8
-				src.critical += 6
-				src.reflect += 6
-				src.counter += 8
-				src.speed = 2.8
-				src.overlays -= small_blue_elec
-				src.overlays += big_blue_elec
-				view(6) << "<font color = blue>[src.name] explodes into their hollow form!"
-				src.icon = 'Saibaman - Form 6.dmi'
-				src.USSJ_Apply()
-				new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("Hollow Form")if(src.powerlevel_max >= 375000)
-				if(!src.doing) src.doing ++
-				src.Icon_State("enrage")
-				src.frozen = 1
-				sleep(trans_time)
-				src.powerlevel = src.powerlevel_max
-				src.ki = src.ki_max
-				src.strength = src.strength_max
-				src.defence = src.defence_max
-				src.critical = src.critical_max
-				src.dodge = src.dodge_max
-				src.reflect = src.reflect_max
-				src.block = src.block_max
-				src.form = "White Form"
-				src.powerlevel *= 1000
-				src.ki *= 1000
-				src.strength *= 1000
-				src.defence *= 1000
-				src.block += 6
-				src.dodge += 8
-				src.critical += 6
-				src.reflect += 6
-				src.counter += 8
-				src.speed = 2.8
-				src.overlays -= small_blue_elec
-				src.overlays += big_blue_elec
-				view(6) << "<font color = blue>[src.name] explodes into their white form!"
-				src.icon = 'Saibaman - Form 7.dmi'
-				src.USSJ_Apply()
-				new/obj/techs/Overlays/Crater_Small(src.loc)
+
+
+mob/proc/Omni_King_Revert()
+	if(src.KO)
+		src <<"No cheating"
+		return
+	if(src.form_1)
+
+		src.frozen = 1
+		src.icon_state = "enrage"
+
+		sleep(10)
+
+		src.form_1 = 0
+		src.form_2 = 0
+		src.form_3 = 0
+		src.form_4 = 0
+		src.form_5 = 0
+		src.form_6 = 0
+
+		src.overlays -= namek_elec
+		src.overlays -= big_red_elec
+		src.overlays -= mystic_elec
+		src.overlays -= demon_elec_2
+		src.overlays -= demon_elec
+		src.overlays -= small_blue_elec
+		src.overlays -= big_blue_elec
+		src.overlays -= small_red_elec
+		src.overlays -= big_red_elec
+		src.overlays -= ely_red_elec
+		src.overlays -= ely_blue_elec
+
+
+
+//		src.icon = 'Omni-King.dmi'
+		src.Power_Redefine()
+
+		oview() << "[src.name] has reverted from his Transformed state."
+		src.icon_state = ""
 		src.frozen = 0
-		if(src.doing) src.doing --
-		src.Icon_State("")
-		src.safe = 0
-	Dragon_Trans()
-		var/trans_time = 10
-		if(src.upkeep == 5) trans_time = 5
-		if(src.doing||src.buku||src.dual_training||src.selftraining||src.boxing||src.meditation||src.meditate||src.KO) return
-		switch(src.form)
-			if("")
-				if(src.powerlevel_max >= 10000)
+		src.doing = 0
+
+		return
+	else
+		return
+
+
+mob/proc/Legend_Revert()
+	if(src.KO)
+		src <<"No cheating"
+		return
+	if(src.form_1)
+
+		src.frozen = 1
+		src.icon_state = "enrage"
+
+		sleep(10)
+
+		src.form_1 = 0
+		src.form_2 = 0
+		src.form_3 = 0
+		src.form_4 = 0
+		src.form_5 = 0
+		src.form_6 = 0
+		src.form_7 = 0
+
+		src.overlays -= small_blue_elec
+		src.overlays -= big_blue_elec
+
+		src.overlays -= small_red_elec
+		src.overlays -= big_red_elec
+
+		src.overlays -= small_purple_elec
+		src.overlays -= big_purple_elec
+
+		src.overlays -= mystic_elec
+
+		src.icon = 'LSSJ.dmi'
+		src.Power_Redefine()
+		src.Skin_Apply()
+
+		oview() << "[src.name] has reverted from his Transformed state."
+		src.icon_state = ""
+		src.frozen = 0
+		src.doing = 0
+
+		return
+	else
+		return
+
+
+
+
+mob/proc/Dragon_Revert()
+	if(src.KO)
+		src <<"No cheating"
+		return
+	if(src.form_1)
+
+		src.frozen = 1
+		src.icon_state = "enrage"
+
+		sleep(10)
+
+		src.form_1 = 0
+		src.form_2 = 0
+		src.form_3 = 0
+		src.form_4 = 0
+		src.form_5 = 0
+		src.form_6 = 0
+
+		src.overlays -= small_blue_elec
+		src.overlays -= big_blue_elec
+
+		src.overlays -= small_red_elec
+		src.overlays -= big_red_elec
+
+		src.overlays -= small_purple_elec
+		src.overlays -= big_purple_elec
+
+		src.overlays -= mystic_elec
+
+		src.icon = 'Dragon.dmi'
+		src.Power_Redefine()
+		src.Skin_Apply()
+
+		oview() << "[src.name] has reverted from his Transformed state."
+		src.icon_state = ""
+		src.frozen = 0
+		src.doing = 0
+
+		return
+	else
+		return
+
+
+mob/proc/Saibaman_Revert()
+	if(src.KO)
+		src <<"No cheating"
+		return
+	if(src.form_1)
+
+		src.frozen = 1
+		src.icon_state = "enrage"
+
+		sleep(10)
+
+		src.form_1 = 0
+		src.form_2 = 0
+		src.form_3 = 0
+		src.form_4 = 0
+		src.form_5 = 0
+
+		src.overlays -= small_blue_elec
+		src.overlays -= big_blue_elec
+
+		src.overlays -= small_red_elec
+		src.overlays -= big_red_elec
+		src.overlays -= ely_red_elec
+		src.overlays -= ely_blue_elec
+
+		src.overlays -= mystic_elec
+		src.underlays -= sh2_aura
+		src.underlays -= src.aura
+		src.aura_on = 0
+
+
+		src.Power_Redefine()
+		src.Skin_Apply()
+		src.Hair_Apply()
+
+		oview() << "[src.name] has reverted from his Transformed state."
+		src.icon = 'Saibaman - Form 1.dmi'
+		src.icon_state = ""
+		src.frozen = 0
+		src.doing = 0
+
+		return
+	else
+		return
+
+mob/proc/Kai_Revert()
+	if(src.KO)
+		src <<"No cheating"
+		return
+	if(src.form_1)
+
+		src.frozen = 1
+		src.icon_state = "enrage"
+
+		sleep(10)
+
+		src.form_1 = 0
+		src.form_2 = 0
+		src.form_3 = 0
+		src.form_4 = 0
+		src.form_5 = 0
+
+		src.overlays -= small_blue_elec
+		src.overlays -= big_blue_elec
+
+		src.overlays -= small_red_elec
+		src.overlays -= big_red_elec
+		src.overlays -= ely_red_elec
+		src.overlays -= ely_blue_elec
+
+		src.overlays -= mystic_elec
+		src.underlays -= sh2_aura
+		src.underlays -= src.aura
+		src.aura_on = 0
+
+
+		src.Power_Redefine()
+		src.Skin_Apply()
+		src.Hair_Apply()
+
+		oview() << "[src.name] has reverted from his Transformed state."
+		src.icon = 'Kai - Normal.dmi'
+		src.icon_state = ""
+		src.frozen = 0
+		src.doing = 0
+
+		return
+	else
+		return
+
+
+
+mob/proc/Legend_Trans()
+	var/trans_time = 27
+
+	if(src.upkeep == 5)
+		trans_time = 5
+
+	if(src.doing)
+		return
+	if(src.KO)
+		return
+	else
+		if(!src.form_1)
+			if(src.powerlevel_max >= 85000)
+				src.safe = 1
+				src.doing = 1
+				src.icon_state = "enrage"
+				src.frozen = 1
+				sleep(trans_time)
+
+				src.powerlevel = src.powerlevel_max
+				src.ki = src.ki_max
+				src.strength = src.strength_max
+				src.defence = src.defence_max
+				src.critical = src.critical_max
+				src.dodge = src.dodge_max
+				src.reflect = src.reflect_max
+				src.block = src.block_max
+
+				src.powerlevel *= 13
+				src.ki *= 10
+				src.strength *= 9
+				src.defence *= 8
+
+				src.block += 2
+				src.dodge += 2
+				src.critical += 5
+				src.reflect += 5
+				src.counter += 2
+
+				src.speed = 3.8
+
+				view(6) << "<font color = green>[src.name]'s power surges as they morph into their Second Form!"
+				src.icon_state = ""
+				src.icon = 'Brollly.dmi'
+				new/obj/techs/Overlays/Crater_Small(src.loc)
+
+				src.form_1 = 1
+				src.frozen = 0
+				src.doing = 0
+				src.safe = 0
+				src.FORM1_EXP()
+//				src.Transformation_Strain()
+				return
+		else
+			if(!src.form_2)
+				if(src.powerlevel_max >= 2500000)
 					src.safe = 1
-					if(!src.doing) src.doing ++
-					src.Icon_State("enrage")
+					src.doing = 1
+					src.icon_state = "enrage"
 					src.frozen = 1
 					sleep(trans_time)
-					src.powerlevel = src.powerlevel_max
-					src.ki = src.ki_max
-					src.strength = src.strength_max
-					src.defence = src.defence_max
-					src.critical = src.critical_max
-					src.dodge = src.dodge_max
-					src.reflect = src.reflect_max
-					src.block = src.block_max
-					src.form = "Second Form"
-					src.powerlevel *= 100
-					src.ki *= 100
-					src.strength *= 100
-					src.defence *= 100
-					src.block += 2
-					src.dodge += 2
-					src.critical += 5
-					src.reflect += 5
-					src.counter += 2
-					src.speed = 3.8
-					view(6) << "<font color = #800080>[src.name] changes into their Second Form!"
-					src.icon = 'Dragon Rage 2.dmi'
-					new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("Second Form")
-				if(src.powerlevel_max >= 50000)
-					src.safe = 1
-					if(!src.doing) src.doing ++
-					src.Icon_State("enrage")
-					src.frozen = 1
-					sleep(trans_time)
+
 					src.powerlevel = src.powerlevel_max
 					src.ki = src.ki_max
 					src.critical = src.critical_max
@@ -309,291 +296,833 @@ mob/proc
 					src.defence = src.defence_max
 					src.reflect = src.reflect_max
 					src.block = src.block_max
+
 					src.powerlevel = src.powerlevel_max
-					src.form = "Third Form"
-					src.powerlevel *= 200
-					src.ki *= 200
-					src.strength *= 200
-					src.defence *= 200
+					src.powerlevel *= 18
+					src.ki *= 15
+					src.strength *= 14
+					src.defence *= 13
+
 					src.block += 4
 					src.dodge += 4
 					src.critical += 7
 					src.reflect += 7
 					src.counter += 4
+
 					src.speed = 3
-					view(6) << "<font color = #800080>[src.name] changes into their Third Form!"
-					src.icon = 'Dragon Rage 3.dmi'
+
+					view(6) << "<font color = green>[src.name]'s power surges as they morph into their Third Form!"
+					src.icon_state = ""
+					src.icon = 'Brolly1.dmi'
 					new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("Third Form")
-				if(src.powerlevel_max >= 100000)
-					src.safe = 1
-					if(!src.doing) src.doing ++
-					src.Icon_State("enrage")
+
+					src.form_2 = 1
+					src.frozen = 0
+					src.doing = 0
+					src.safe = 0
+					return
+			else
+				if(!src.form_3)
+					if(src.powerlevel_max >= 5000000)
+						src.safe = 1
+						src.doing = 1
+						src.icon_state = "enrage"
+						src.frozen = 1
+						sleep(trans_time)
+
+						src.powerlevel = src.powerlevel_max
+						src.ki = src.ki_max
+						src.critical = src.critical_max
+						src.dodge = src.dodge_max
+						src.strength = src.strength_max
+						src.defence = src.defence_max
+						src.reflect = src.reflect_max
+						src.block = src.block_max
+
+						src.powerlevel = src.powerlevel_max
+						src.powerlevel *= 23
+						src.ki *= 20
+						src.strength *= 19
+						src.defence *= 18
+
+						src.block += 6
+						src.dodge += 6
+						src.critical += 8
+						src.reflect += 8
+						src.counter += 6
+
+						src.speed = 2.5
+
+						src.overlays += small_purple_elec
+
+						view(6) << "<font color = green>[src.name]'s power surges as they morph into their 4th Form!"
+						src.icon_state = ""
+						src.icon = 'Brolly2.dmi'
+						new/obj/techs/Overlays/Crater_Small(src.loc)
+						src.form_3 = 1
+						src.frozen = 0
+						src.doing = 0
+						src.safe = 0
+						return
+				else
+					if(!src.form_4)
+						if(src.powerlevel_max >= 17500000)
+							src.safe = 1
+							src.doing = 1
+							src.icon_state = "enrage"
+							src.frozen = 1
+							sleep(trans_time)
+
+							src.powerlevel = src.powerlevel_max
+							src.ki = src.ki_max
+							src.critical = src.critical_max
+							src.dodge = src.dodge_max
+							src.strength = src.strength_max
+							src.defence = src.defence_max
+							src.reflect = src.reflect_max
+							src.block = src.block_max
+
+							src.powerlevel *= 28
+							src.ki *= 25
+							src.strength *= 24
+							src.defence *= 23
+
+							src.block += 10
+							src.dodge += 10
+							src.critical += 12
+							src.reflect += 12
+							src.counter += 10
+
+							src.speed = 1.8
+
+							src.overlays -= small_purple_elec
+							src.overlays += big_purple_elec
+
+							view(6) << "<font color = green>[src.name]'s power surges as they morph into their 5th Form!"
+							src.icon_state = ""
+							src.icon = 'Brolly3.dmi'
+							new/obj/techs/Overlays/Crater_Center(src.loc)
+							src.form_4 = 1
+							src.frozen = 0
+							src.doing = 0
+							src.safe = 0
+							return
+					else
+						if(!src.form_5)
+							if(!src.metal_converted)
+								if(src.powerlevel_max >= 50000000)
+									src.safe = 1
+									src.doing = 1
+									src.icon_state = "enrage"
+									src.frozen = 1
+									sleep(trans_time)
+
+									src.powerlevel = src.powerlevel_max
+									src.ki = src.ki_max
+									src.critical = src.critical_max
+									src.dodge = src.dodge_max
+									src.strength = src.strength_max
+									src.defence = src.defence_max
+									src.reflect = src.reflect_max
+									src.block = src.block_max
+
+									src.powerlevel *= 33
+									src.ki *= 30
+									src.strength *= 29
+									src.defence *= 28
+
+									src.block += 9
+									src.dodge += 9
+									src.critical += 11
+									src.reflect += 11
+									src.counter += 9
+
+									src.speed = 1.8
+
+
+									view(6) << "<font color = green>[src.name]'s power surges as they morph into their Final Form!"
+									src.icon_state = ""
+									src.icon = 'Brolly4.dmi'
+									new/obj/techs/Overlays/Crater_Center(src.loc)
+									src.form_5 = 1
+									src.frozen = 0
+									src.doing = 0
+									src.safe = 0
+
+									src.overlays += big_purple_elec
+									return
+
+mob/proc/Saibaman_Trans()
+	var/trans_time = 5
+
+
+	if(src.doing)
+		return
+	if(src.KO)
+		return
+	else
+		if(!src.form_1)
+			if(src.powerlevel_max >= 25000)
+				src.doing = 1
+				src.icon_state = "enrage"
+				src.frozen = 1
+				sleep(trans_time)
+
+				src.powerlevel = src.powerlevel_max
+				src.ki = src.ki_max
+				src.strength = src.strength_max
+				src.defence = src.defence_max
+				src.critical = src.critical_max
+				src.dodge = src.dodge_max
+				src.reflect = src.reflect_max
+				src.block = src.block_max
+
+				src.powerlevel *= 12
+				src.ki *= 8
+				src.strength *= 10
+				src.defence *= 10
+
+				src.block += 7
+				src.dodge += 4
+				src.critical += 4
+				src.reflect += 7
+				src.counter += 4
+
+				src.speed = 3.8
+
+				view(6) << "<font color = green>[src.name] explodes into frist form!"
+				src.icon = 'Saibaman - Form 1.dmi'
+				src.icon_state = ""
+				new/obj/techs/Overlays/Crater_Small(src.loc)
+				src.form_1 = 1
+				src.frozen = 0
+				src.doing = 0
+				src.FORM1_EXP()
+//					src.Transformation_Strain()
+				return
+		else
+			if(!src.form_2)
+				if(src.powerlevel_max >= 5000000)
+					src.doing = 1
+					src.icon_state = "enrage"
 					src.frozen = 1
 					sleep(trans_time)
+
 					src.powerlevel = src.powerlevel_max
 					src.ki = src.ki_max
-					src.critical = src.critical_max
-					src.dodge = src.dodge_max
 					src.strength = src.strength_max
 					src.defence = src.defence_max
+					src.critical = src.critical_max
+					src.dodge = src.dodge_max
 					src.reflect = src.reflect_max
 					src.block = src.block_max
-					src.powerlevel = src.powerlevel_max
-					src.form = "Fourth Form"
-					src.powerlevel *= 400
-					src.ki *= 400
-					src.strength *= 400
-					src.defence *= 400
-					src.block += 6
+
+					src.powerlevel *= 17
+					src.ki *= 13
+					src.strength *= 15
+					src.defence *= 15
+
+					src.block += 8
 					src.dodge += 6
-					src.critical += 8
+					src.critical += 6
 					src.reflect += 8
 					src.counter += 6
-					src.speed = 2.5
-					src.overlays += small_purple_elec
-					view(6) << "<font color = #800080>[src.name] changes into their Forth Form!"
-					src.icon = 'Dragon Rage 5.dmi'
+
+					src.speed = 3.2
+					src.overlays += small_blue_elec
+
+					view(6) << "<font color = Blue>[src.name] explodes into white form!"
+					src.icon = 'Saibaman - Form 2.dmi'
+					src.icon_state = ""
 					new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("Fourth Form")
-				if(src.powerlevel_max >= 350000)
-					src.safe = 1
-					if(!src.doing) src.doing ++
-					src.Icon_State("enrage")
-					src.frozen = 1
-					sleep(trans_time)
-					src.powerlevel = src.powerlevel_max
-					src.ki = src.ki_max
-					src.critical = src.critical_max
-					src.dodge = src.dodge_max
-					src.strength = src.strength_max
-					src.defence = src.defence_max
-					src.reflect = src.reflect_max
-					src.block = src.block_max
-					src.form = "Fifth Form"
-					src.powerlevel *= 500
-					src.ki *= 500
-					src.strength *= 500
-					src.defence *= 500
-					src.block += 10
-					src.dodge += 10
-					src.critical += 12
-					src.reflect += 12
-					src.counter += 10
-					src.speed = 1.8
-					src.overlays -= small_purple_elec
-					src.overlays += big_purple_elec
-					view(6) << "<font color = #800080>[src.name] changes into their Fifth Form!"
-					src.icon = 'Dragon Rage 6.dmi'
-					new/obj/techs/Overlays/Crater_Center(src.loc)
-			if("Fifth Form")
-				if(src.powerlevel_max >= 500000)
-					src.safe = 1
-					if(!src.doing) src.doing ++
-					src.Icon_State("enrage")
-					src.frozen = 1
-					sleep(trans_time)
-					src.powerlevel = src.powerlevel_max
-					src.ki = src.ki_max
-					src.critical = src.critical_max
-					src.dodge = src.dodge_max
-					src.strength = src.strength_max
-					src.defence = src.defence_max
-					src.reflect = src.reflect_max
-					src.block = src.block_max
-					src.form = "Final Form"
-					src.powerlevel *= 600
-					src.ki *= 600
-					src.strength *= 600
-					src.defence *= 600
-					src.block += 9
-					src.dodge += 9
-					src.critical += 11
-					src.reflect += 11
-					src.counter += 9
-					src.speed = 1.8
-					view(6) << "<font color = #800080>[src.name] changes into their Final Form!"
-					src.icon = 'Dragon Rage 7.dmi'
-					new/obj/techs/Overlays/Crater_Center(src.loc)
-					src.overlays += big_purple_elec
-			if("Final Form")
-				if(src.powerlevel_max >= 1000000)
-					src.safe = 1
-					if(!src.doing) src.doing ++
-					src.Icon_State("enrage")
-					src.frozen = 1
-					sleep(trans_time)
-					src.powerlevel = src.powerlevel_max
-					src.ki = src.ki_max
-					src.critical = src.critical_max
-					src.dodge = src.dodge_max
-					src.strength = src.strength_max
-					src.defence = src.defence_max
-					src.reflect = src.reflect_max
-					src.block = src.block_max
-					src.form = "Omega Form"
-					src.powerlevel *= 800
-					src.ki *= 800
-					src.strength *= 800
-					src.defence *= 800
-					src.block += 9
-					src.dodge += 9
-					src.critical += 19
-					src.reflect += 3
-					src.counter += 3
-					src.speed = -8.5
-					view(6) << "<font color = #800080>[src.name] changes into their Omega Form!"
-					src.icon = 'Omegas.dmi'
-					new/obj/techs/Overlays/Crater_Center(src.loc)
-					src.overlays += big_purple_elec
-					src.overlays += ely_red_elec
-					src.overlays += ely_blue_elec
-			if("Omega Form")
-				if(src.powerlevel_max >= 3500000)
-					src.safe = 1
-					if(!src.doing) src.doing ++
-					src.Icon_State("enrage")
-					src.frozen = 1
-					sleep(trans_time)
-					src.powerlevel = src.powerlevel_max
-					src.ki = src.ki_max
-					src.critical = src.critical_max
-					src.dodge = src.dodge_max
-					src.strength = src.strength_max
-					src.defence = src.defence_max
-					src.reflect = src.reflect_max
-					src.block = src.block_max
-					src.form = "Omegas Form"
-					src.powerlevel *= 1000
-					src.ki *= 1000
-					src.strength *= 1000
-					src.defence *= 1000
-					src.block += 9
-					src.dodge += 9
-					src.critical += 19
-					src.reflect += 3
-					src.counter += 3
-					src.speed = -10.5
-					view(6) << "<font color = #800080>[src.name] changes into their Omegas Form!"
-					src.icon = 'Omega.dmi'
-					new/obj/techs/Overlays/Crater_Center(src.loc)
-					src.overlays += big_purple_elec
-					src.overlays += ely_red_elec
-					src.overlays += ely_blue_elec
-		src.frozen = 0
-		if(src.doing) src.doing --
-		src.Icon_State("")
-		src.safe = 0
-	Bio_W_Trans()
-		if(src.doing||src.buku||src.dual_training||src.selftraining||src.boxing||src.meditation||src.meditate) return
-		if(alert(usr,"Are your sure you want to transform?","Permanent Transformation","Yes","No")=="No")return
-		src.safe = 1
-		if(!src.doing) src.doing ++
-		src.frozen = 1
-		src.Icon_State("enrage")
-		sleep(19)
-		switch(src.form)
-			if("")if(src.powerlevel_max >= 100000 && src.level >= 35000)
-				src.form = "Model II"
-				src.Power_Redefine()
-				src.speed_max = 3.2
-				src.critical_max += rand(1,3)
-				src.dodge_max += rand(1,3)
-				src.reflect_max += rand(1,3)
-				src.block_max += rand(1,3)
-				src.counter_max += rand(1,3)
-				view(6) << "<font color = green>[src.name] transforms into their number 2 form!"
-				src.icon = 'Bio Warrior 2.dmi'
+
+					src.form_2 = 1
+					src.frozen = 0
+					src.doing = 0
+					return
+			else
+				if(!src.form_3)
+					if(src.powerlevel_max >= 7500000)
+						src.doing = 1
+						src.icon_state = "enrage"
+						src.frozen = 1
+						sleep(trans_time)
+
+						src.powerlevel = src.powerlevel_max
+						src.ki = src.ki_max
+						src.strength = src.strength_max
+						src.defence = src.defence_max
+						src.critical = src.critical_max
+						src.dodge = src.dodge_max
+						src.reflect = src.reflect_max
+						src.block = src.block_max
+
+						src.powerlevel *= 22
+						src.ki *= 18
+						src.strength *= 20
+						src.defence *= 20
+
+						src.block += 6
+						src.dodge += 8
+						src.critical += 6
+						src.reflect += 6
+						src.counter += 8
+
+						src.speed = 2.8
+						src.overlays -= small_blue_elec
+						src.overlays += big_blue_elec
+
+						view(6) << "<font color = blue>[src.name] explodes into black Form!"
+						src.icon = 'Saibaman - Form 3.dmi'
+						src.icon_state = ""
+						src.USSJ_Apply()
+						new/obj/techs/Overlays/Crater_Small(src.loc)
+
+						src.form_3 = 1
+						src.frozen = 0
+						src.doing = 0
+						return
+
+
+mob/proc/Kai_Trans()
+	var/trans_time = 5
+
+
+	if(src.doing)
+		return
+	if(src.KO)
+		return
+	else
+		if(!src.form_1)
+			if(src.powerlevel_max >= 10000)
+				src.doing = 1
+				src.icon_state = "enrage"
+				src.frozen = 1
+				sleep(trans_time)
+
+				src.powerlevel = src.powerlevel_max
+				src.ki = src.ki_max
+				src.strength = src.strength_max
+				src.defence = src.defence_max
+				src.critical = src.critical_max
+				src.dodge = src.dodge_max
+				src.reflect = src.reflect_max
+				src.block = src.block_max
+
+				src.powerlevel *= 12
+				src.ki *= 8
+				src.strength *= 10
+				src.defence *= 10
+
+				src.block += 7
+				src.dodge += 4
+				src.critical += 4
+				src.reflect += 7
+				src.counter += 4
+
+				src.speed = 3.8
+
+				view(6) << "<font color = blue>[src.name] explodes into Elder Kai Form!"
+				src.icon = 'Kai - Elder.dmi'
+				src.icon_state = ""
 				new/obj/techs/Overlays/Crater_Small(src.loc)
-			if("Model II")if(src.powerlevel_max >= 350000 && src.level >= 80000)
-				src.form = "Model III"
-				src.Power_Redefine()
-				src.powerlevel_max *= 2
-				src.ki_max *= 2
-				src.strength_max *= 2
-				src.defence_max *= 2
-				src.speed_max = 2.5
-				src.critical_max += rand(1,5)
-				src.dodge_max += rand(1,5)
-				src.reflect_max += rand(1,5)
-				src.block_max += rand(1,5)
-				src.counter_max += rand(1,5)
-				view(6) << "<font color = green>[src.name] transforms into their number 3 form!!"
-				src.icon = 'Bio Warrior 3.dmi'
-				new/obj/techs/Overlays/Crater_Center(src.loc)
-			if("Model III")if(src.powerlevel_max >= 800000)
-				src.form = "Model IV"
-				src.Power_Redefine()
-				src.powerlevel_max *= 5
-				src.ki_max *= 5
-				src.strength_max *= 5
-				src.defence_max *= 5
-				src.speed_max = 1.8
-				src.block_max += 15
-				src.dodge_max += 15
-				src.critical_max += 15
-				src.reflect_max += 15
-				src.counter_max += 15
-				src.overlays += mystic_elec
-				view(6) << "<font color = green>[src.name] transforms into their number 4 form!!"
-				src.icon = 'Bio Warrior 4.dmi'
-				new/obj/techs/Overlays/Crater_Center(src.loc)
-				src.overlays -= src.aura
-			if("Model IV")if(src.powerlevel_max >= 1000000)
-				src.form = "Model V"
-				src.Power_Redefine()
-				src.powerlevel_max *= 2
-				src.ki_max *= 2
-				src.strength_max *= 2
-				src.defence_max *= 2
-				src.speed_max = 1.2
-				src.block_max += 20
-				src.dodge_max += 20
-				src.critical_max += 20
-				src.reflect_max += 20
-				src.counter_max += 20
-				src.overlays += mystic_elec
-				view(6) << "<font color = green>[src.name] transforms into their number 5 form!!"
-				src.icon = 'Bio Warrior 5.dmi'
-				new/obj/techs/Overlays/Crater_Center(src.loc)
-				src.overlays -= src.aura
-			if("Model V")if(src.powerlevel_max >= 2300000)
-				src.form = "Model VI"
-				src.Power_Redefine()
-				src.powerlevel_max *= 5
-				src.ki_max *= 5
-				src.strength_max *= 5
-				src.defence_max *= 5
-				src.speed_max = 0.7
-				src.block_max += 20
-				src.dodge_max += 20
-				src.critical_max += 20
-				src.reflect_max += 20
-				src.counter_max += 20
-				src.overlays += mystic_elec
-				view(6) << "<font color = green>[src.name] transforms into their number 6 form!!"
-				src.icon = 'Bio Warrior 6.dmi'
-				new/obj/techs/Overlays/Crater_Center(src.loc)
-				src.overlays -= src.aura
-			if("Model VI")if(src.powerlevel_max >= 35000000)
-				src.form = "Model VII"
-				src.Power_Redefine()
-				src.powerlevel_max *= 2.8
-				src.ki_max *= 2.8
-				src.strength_max *= 2.8
-				src.defence_max *= 2.8
-				src.speed_max = 0.1
-				src.block_max += 20
-				src.dodge_max += 20
-				src.critical_max += 20
-				src.reflect_max += 20
-				src.counter_max += 20
-				src.overlays += mystic_elec
-				view(6) << "<font color = green>[src.name] transforms into their number 7 form!!"
-				src.icon = 'Bio Warrior 7.dmi'
-				new/obj/techs/Overlays/Crater_Center(src.loc)
-				src.overlays -= src.aura
-		src.frozen = 0
-		if(src.doing) src.doing --
-		src.safe = 0
-		src.Icon_State("")
+				src.form_1 = 1
+				src.frozen = 0
+				src.doing = 0
+				src.FORM1_EXP()
+//					src.Transformation_Strain()
+				return
+		else
+			if(!src.form_2)
+				if(src.powerlevel_max >= 2000000)
+					src.doing = 1
+					src.icon_state = "enrage"
+					src.frozen = 1
+					sleep(trans_time)
+
+					src.powerlevel = src.powerlevel_max
+					src.ki = src.ki_max
+					src.strength = src.strength_max
+					src.defence = src.defence_max
+					src.critical = src.critical_max
+					src.dodge = src.dodge_max
+					src.reflect = src.reflect_max
+					src.block = src.block_max
+
+					src.powerlevel *= 17
+					src.ki *= 13
+					src.strength *= 15
+					src.defence *= 15
+
+					src.block += 8
+					src.dodge += 6
+					src.critical += 6
+					src.reflect += 8
+					src.counter += 6
+
+					src.speed = 3.2
+					src.overlays += small_blue_elec
+
+					view(6) << "<font color = Blue>[src.name] explodes into King Form!"
+					src.icon = 'Kai - King.dmi'
+					src.icon_state = ""
+					new/obj/techs/Overlays/Crater_Small(src.loc)
+
+					src.form_2 = 1
+					src.frozen = 0
+					src.doing = 0
+					return
+			else
+				if(!src.form_3)
+					if(src.powerlevel_max >= 5000000)
+						src.doing = 1
+						src.icon_state = "enrage"
+						src.frozen = 1
+						sleep(trans_time)
+
+						src.powerlevel = src.powerlevel_max
+						src.ki = src.ki_max
+						src.strength = src.strength_max
+						src.defence = src.defence_max
+						src.critical = src.critical_max
+						src.dodge = src.dodge_max
+						src.reflect = src.reflect_max
+						src.block = src.block_max
+
+						src.powerlevel *= 22
+						src.ki *= 18
+						src.strength *= 20
+						src.defence *= 20
+
+						src.block += 6
+						src.dodge += 8
+						src.critical += 6
+						src.reflect += 6
+						src.counter += 8
+
+						src.speed = 2.8
+						src.overlays -= small_blue_elec
+						src.overlays += big_blue_elec
+
+						view(6) << "<font color = blue>[src.name] explodes into Grand Form!"
+						src.icon = 'Kai - Grand.dmi'
+						src.icon_state = ""
+						src.USSJ_Apply()
+						new/obj/techs/Overlays/Crater_Small(src.loc)
+
+						src.form_3 = 1
+						src.frozen = 0
+						src.doing = 0
+						return
+				else
+					if(!src.form_4)
+						if(src.powerlevel_max >= 10000000)
+
+							src.doing = 1
+							src.icon_state = "enrage"
+							src.frozen = 1
+							sleep(trans_time)
+
+							src.powerlevel = src.powerlevel_max
+							src.ki = src.ki_max
+							src.strength = src.strength_max
+							src.defence = src.defence_max
+							src.critical = src.critical_max
+							src.dodge = src.dodge_max
+							src.reflect = src.reflect_max
+							src.block = src.block_max
+
+							src.powerlevel *= 27
+							src.ki *= 23
+							src.strength *= 25
+							src.defence *= 25
+
+							src.block += 8
+							src.dodge += 5
+							src.critical += 8
+							src.reflect += 5
+							src.counter += 5
+
+							src.speed = 2.2
+							src.overlays -= big_blue_elec
+							src.overlays += ely_blue_elec
+
+							view(6) << "<font color = blue>[src.name] explodes into Supreme Form!"
+							src.icon = 'Kai - Supreme.dmi'
+							src.icon_state = ""
+							src.Skin_Apply()
+							src.SH_Hair_Apply()
+							new/obj/techs/Overlays/Crater_Center(src.loc)
+							src.form_4 = 1
+							src.frozen = 0
+							src.doing = 0
+							return
+
+					else
+						if(!src.form_5)
+							if(src.powerlevel_max >= 50000000)
+
+								src.doing = 1
+								src.icon_state = "enrage"
+								src.frozen = 1
+								sleep(trans_time)
+
+								src.powerlevel = src.powerlevel_max
+								src.ki = src.ki_max
+								src.strength = src.strength_max
+								src.defence = src.defence_max
+								src.critical = src.critical_max
+								src.dodge = src.dodge_max
+								src.reflect = src.reflect_max
+								src.block = src.block_max
+
+								src.powerlevel *= 32
+								src.ki *= 28
+								src.strength *= 30
+								src.defence *= 30
+
+								src.block += 5
+								src.dodge += 8
+								src.critical += 6
+								src.reflect += 6
+								src.counter += 8
+
+								src.overlays -= ely_blue_elec
+								src.overlays += ely_red_elec
+								src.speed = 1.7
+
+								view(6) << "<font color = blue>[src.name]'s breaks into  Ultimate Kai Form!"
+								src.icon_state = ""
+								src.icon = 'Kai - Ultimate.dmi'
+								new/obj/techs/Overlays/Crater_Center(src.loc)
+								src.SH2_Hair_Apply()
+								src.underlays += sh2_aura
+								spawn(25) src.underlays -= sh2_aura
+
+								src.form_5 = 1
+								src.frozen = 0
+								src.doing = 0
+								return
+
+mob/proc/Dragon_Trans()
+	var/trans_time = 10
+
+	if(src.upkeep == 5)
+		trans_time = 5
+
+	if(src.doing)
+		return
+	if(src.KO)
+		return
+	else
+		if(!src.form_1)
+			if(src.powerlevel_max >= 10000000)
+				src.safe = 1
+				src.doing = 1
+				src.icon_state = "enrage"
+				src.frozen = 1
+				sleep(trans_time)
+
+				src.powerlevel = src.powerlevel_max
+				src.ki = src.ki_max
+				src.strength = src.strength_max
+				src.defence = src.defence_max
+				src.critical = src.critical_max
+				src.dodge = src.dodge_max
+				src.reflect = src.reflect_max
+				src.block = src.block_max
+
+				src.powerlevel *= 13
+				src.ki *= 10
+				src.strength *= 9
+				src.defence *= 8
+
+				src.block += 2
+				src.dodge += 2
+				src.critical += 5
+				src.reflect += 5
+				src.counter += 2
+
+				src.speed = 3.8
+
+				view(6) << "<font color = #800080>[src.name] changes into his Second Form!"
+				src.icon_state = ""
+				src.icon = 'Dragon Rage 2.dmi'
+				new/obj/techs/Overlays/Crater_Small(src.loc)
+
+				src.form_1 = 1
+				src.frozen = 0
+				src.doing = 0
+				src.safe = 0
+				src.FORM1_EXP()
+//				src.Transformation_Strain()
+				return
+		else
+			if(!src.form_2)
+				if(src.powerlevel_max >= 50000000)
+					src.safe = 1
+					src.doing = 1
+					src.icon_state = "enrage"
+					src.frozen = 1
+					sleep(trans_time)
+
+					src.powerlevel = src.powerlevel_max
+					src.ki = src.ki_max
+					src.critical = src.critical_max
+					src.dodge = src.dodge_max
+					src.strength = src.strength_max
+					src.defence = src.defence_max
+					src.reflect = src.reflect_max
+					src.block = src.block_max
+
+					src.powerlevel = src.powerlevel_max
+					src.powerlevel *= 18
+					src.ki *= 15
+					src.strength *= 14
+					src.defence *= 13
+
+					src.block += 4
+					src.dodge += 4
+					src.critical += 7
+					src.reflect += 7
+					src.counter += 4
+
+					src.speed = 3
+
+					view(6) << "<font color = #800080>[src.name] changes into his Third Form!"
+					src.icon = 'Dragon Rage 3.dmi'
+					new/obj/techs/Overlays/Crater_Small(src.loc)
+
+					src.form_2 = 1
+					src.frozen = 0
+					src.doing = 0
+					src.safe = 0
+					return
+			else
+				if(!src.form_3)
+					if(src.powerlevel_max >= 100000000)
+						src.safe = 1
+						src.doing = 1
+						src.icon_state = "enrage"
+						src.frozen = 1
+						sleep(trans_time)
+
+						src.powerlevel = src.powerlevel_max
+						src.ki = src.ki_max
+						src.critical = src.critical_max
+						src.dodge = src.dodge_max
+						src.strength = src.strength_max
+						src.defence = src.defence_max
+						src.reflect = src.reflect_max
+						src.block = src.block_max
+
+						src.powerlevel = src.powerlevel_max
+						src.powerlevel *= 23
+						src.ki *= 20
+						src.strength *= 19
+						src.defence *= 18
+
+						src.block += 6
+						src.dodge += 6
+						src.critical += 8
+						src.reflect += 8
+						src.counter += 6
+
+						src.speed = 2.5
+
+						src.overlays += small_purple_elec
+
+						view(6) << "<font color = #800080>[src.name] changes into his Forth Form!"
+						src.icon = 'Dragon Rage 5.dmi'
+						new/obj/techs/Overlays/Crater_Small(src.loc)
+						src.form_3 = 1
+						src.frozen = 0
+						src.doing = 0
+						src.safe = 0
+						return
+				else
+					if(!src.form_4)
+						if(src.powerlevel_max >= 350000000)
+							src.safe = 1
+							src.doing = 1
+							src.icon_state = "enrage"
+							src.frozen = 1
+							sleep(trans_time)
+
+							src.powerlevel = src.powerlevel_max
+							src.ki = src.ki_max
+							src.critical = src.critical_max
+							src.dodge = src.dodge_max
+							src.strength = src.strength_max
+							src.defence = src.defence_max
+							src.reflect = src.reflect_max
+							src.block = src.block_max
+
+							src.powerlevel *= 28
+							src.ki *= 25
+							src.strength *= 24
+							src.defence *= 23
+
+							src.block += 10
+							src.dodge += 10
+							src.critical += 12
+							src.reflect += 12
+							src.counter += 10
+
+							src.speed = 1.8
+
+							src.overlays -= small_purple_elec
+							src.overlays += big_purple_elec
+
+							view(6) << "<font color = #800080>[src.name] changes into his Fifth Form!"
+							src.icon_state = ""
+							src.icon = 'Dragon Rage 6.dmi'
+							new/obj/techs/Overlays/Crater_Center(src.loc)
+							src.form_4 = 1
+							src.frozen = 0
+							src.doing = 0
+							src.safe = 0
+							return
+					else
+						if(!src.form_5)
+							if(src.powerlevel_max >= 500000000)
+								src.safe = 1
+								src.doing = 1
+								src.icon_state = "enrage"
+								src.frozen = 1
+								sleep(trans_time)
+
+								src.powerlevel = src.powerlevel_max
+								src.ki = src.ki_max
+								src.critical = src.critical_max
+								src.dodge = src.dodge_max
+								src.strength = src.strength_max
+								src.defence = src.defence_max
+								src.reflect = src.reflect_max
+								src.block = src.block_max
+
+								src.powerlevel *= 33
+								src.ki *= 30
+								src.strength *= 29
+								src.defence *= 28
+
+								src.block += 9
+								src.dodge += 9
+								src.critical += 11
+								src.reflect += 11
+								src.counter += 9
+
+								src.speed = 1.8
+
+
+								view(6) << "<font color = #800080>[src.name] changes into his Final Form!"
+								src.icon = 'Dragon Rage 7.dmi'
+								src.icon_state=""
+								new/obj/techs/Overlays/Crater_Center(src.loc)
+								src.form_5 = 1
+								src.frozen = 0
+								src.doing = 0
+								src.safe = 0
+
+								src.overlays += big_purple_elec
+								return
+						else
+							if(!src.form_6)
+								if(src.powerlevel_max >= 1000000000)
+									src.safe = 1
+									src.doing = 1
+									src.icon_state = "enrage"
+									src.frozen = 1
+									sleep(trans_time)
+
+									src.powerlevel = src.powerlevel_max
+									src.ki = src.ki_max
+									src.critical = src.critical_max
+									src.dodge = src.dodge_max
+									src.strength = src.strength_max
+									src.defence = src.defence_max
+									src.reflect = src.reflect_max
+									src.block = src.block_max
+
+									src.powerlevel *= 100
+									src.ki *= 100
+									src.strength *= 100
+									src.defence *= 100
+
+									src.block += 9
+									src.dodge += 9
+									src.critical += 19
+									src.reflect += 3
+									src.counter += 3
+
+									src.speed = -10.5
+
+
+									view(6) << "<font color = #800080>[src.name] changes into his Omega Form!"
+									src.icon = 'Omega.dmi'
+									src.icon_state=""
+									new/obj/techs/Overlays/Crater_Center(src.loc)
+									src.form_6 = 1
+									src.frozen = 0
+									src.doing = 0
+									src.safe = 0
+
+									src.overlays += big_purple_elec
+									src.overlays += ely_red_elec
+									src.overlays += ely_blue_elec
+									return
+
+mob/proc/Omni_King_Trans()
+	var/trans_time = 10
+
+	if(src.upkeep == 5)
+		trans_time = 5
+
+	if(src.doing)
+		return
+	if(src.KO)
+		return
+	else
+		if(!src.form_1)
+			if(src.powerlevel_max >= 100000)
+				src.safe = 1
+				src.doing = 1
+//				src.overlays += big_purple_aura
+				src.icon_state = "enrage"
+				src.frozen = 1
+				sleep(trans_time)
+
+				src.powerlevel = src.powerlevel_max
+				src.ki = src.ki_max
+				src.strength = src.strength_max
+				src.defence = src.defence_max
+				src.critical = src.critical_max
+				src.dodge = src.dodge_max
+				src.reflect = src.reflect_max
+				src.block = src.block_max
+
+				src.powerlevel *= 130
+				src.ki *= 100
+				src.strength *= 90
+				src.defence *= 80
+
+				src.block += 2
+				src.dodge += 2
+				src.critical += 5
+				src.reflect += 5
+				src.counter += 2
+
+				src.speed = 3.8
+
+				view(6) << "<font color =red>[src.name]'s ENERY INCREASED!"
+				src.icon_state = ""
+			//	src.icon = 'Omni-King.dmi'
+				new/obj/techs/Overlays/Crater_Small(src.loc)
+
+				src.form_1 = 1
+				src.frozen = 0
+				src.doing = 0
+				src.safe = 0
+				src.FORM1_EXP()
+//				src.Transformation_Strain()
+				return

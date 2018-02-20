@@ -43,3 +43,5 @@ Edit:
 
 World Opened. 00:00:32 02/20/2018 Host Address: 10.0.0.242.
 World Closed. 00:03:56 02/20/2018 Host Address: 10.0.0.242.
+World Opened. 05:27:37 02/20/2018 Host Address: 192.168.1.158.
+World Closed. 05:38:43 02/20/2018 Host Address: 192.168.1.158.

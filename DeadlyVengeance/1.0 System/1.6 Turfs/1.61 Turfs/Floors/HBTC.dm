@@ -54,7 +54,6 @@ mob/proc/HBTC_DIE()
 	if(src.powerlevel <= 0)
 		players << "<font color=#FF9900><b>Training Information:</font> \white [src] went Insane in the Hyperbolic Time Chamber!"
 		src.Power_Redefine()
-		src.Force_Revert()
 		src.Follower_Check()
 		src.Basic_Death_vars()
 		src.loc = locate(55,6,8)
