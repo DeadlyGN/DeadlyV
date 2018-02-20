@@ -1,1 +1,165 @@
 World opened on network port 54503.
+runtime error: pick() from empty list
+proc name: Login (/mob/Guest/Login)
+  source file: Character Creation.dm,94
+  usr: (src)
+  src: Jaea (/mob/Guest)
+  src.loc: null
+  call stack:
+Jaea (/mob/Guest): Login()
+runtime error: list index out of bounds
+proc name: dragonball loader (/proc/dragonball_loader)
+  source file: Dragonball Loading System.dm,17
+  usr: (src)
+  src: null
+  call stack:
+dragonball loader()
+runtime error: list index out of bounds
+proc name: dragonball loader2 (/proc/dragonball_loader2)
+  source file: Dragonball Loading System.dm,27
+  usr: (src)
+  src: null
+  call stack:
+dragonball loader2()
+runtime error: list index out of bounds
+proc name: dragonball loader3 (/proc/dragonball_loader3)
+  source file: Dragonball Loading System.dm,37
+  usr: (src)
+  src: null
+  call stack:
+dragonball loader3()
+runtime error: list index out of bounds
+proc name: dragonball loader4 (/proc/dragonball_loader4)
+  source file: Dragonball Loading System.dm,47
+  usr: (src)
+  src: null
+  call stack:
+dragonball loader4()
+runtime error: list index out of bounds
+proc name: dragonball loader5 (/proc/dragonball_loader5)
+  source file: Dragonball Loading System.dm,57
+  usr: (src)
+  src: null
+  call stack:
+dragonball loader5()
+runtime error: list index out of bounds
+proc name: dragonball loader6 (/proc/dragonball_loader6)
+  source file: Dragonball Loading System.dm,67
+  usr: (src)
+  src: null
+  call stack:
+dragonball loader6()
+runtime error: list index out of bounds
+proc name: dragonball loader7 (/proc/dragonball_loader7)
+  source file: Dragonball Loading System.dm,77
+  usr: (src)
+  src: null
+  call stack:
+dragonball loader7()
+runtime error: list index out of bounds
+proc name: dragonball loadern (/proc/dragonball_loadern)
+  source file: Dragonball Loading System.dm,96
+  usr: (src)
+  src: null
+  call stack:
+dragonball loadern()
+runtime error: list index out of bounds
+proc name: dragonball loadern2 (/proc/dragonball_loadern2)
+  source file: Dragonball Loading System.dm,106
+  usr: (src)
+  src: null
+  call stack:
+dragonball loadern2()
+runtime error: list index out of bounds
+proc name: dragonball loadern3 (/proc/dragonball_loadern3)
+  source file: Dragonball Loading System.dm,116
+  usr: (src)
+  src: null
+  call stack:
+dragonball loadern3()
+runtime error: list index out of bounds
+proc name: dragonball loadern4 (/proc/dragonball_loadern4)
+  source file: Dragonball Loading System.dm,126
+  usr: (src)
+  src: null
+  call stack:
+dragonball loadern4()
+runtime error: list index out of bounds
+proc name: dragonball loadern5 (/proc/dragonball_loadern5)
+  source file: Dragonball Loading System.dm,136
+  usr: (src)
+  src: null
+  call stack:
+dragonball loadern5()
+runtime error: list index out of bounds
+proc name: dragonball loadern6 (/proc/dragonball_loadern6)
+  source file: Dragonball Loading System.dm,146
+  usr: (src)
+  src: null
+  call stack:
+dragonball loadern6()
+runtime error: list index out of bounds
+proc name: dragonball loadern7 (/proc/dragonball_loadern7)
+  source file: Dragonball Loading System.dm,156
+  usr: (src)
+  src: null
+  call stack:
+dragonball loadern7()
+runtime error: pick() from empty list
+proc name: dragonball loaderbs (/proc/dragonball_loaderbs)
+  source file: Dragonball Loading System.dm,175
+  usr: (src)
+  src: null
+  call stack:
+dragonball loaderbs()
+runtime error: pick() from empty list
+proc name: dragonball loaderbs2 (/proc/dragonball_loaderbs2)
+  source file: Dragonball Loading System.dm,185
+  usr: (src)
+  src: null
+  call stack:
+dragonball loaderbs2()
+runtime error: pick() from empty list
+proc name: dragonball loaderbs3 (/proc/dragonball_loaderbs3)
+  source file: Dragonball Loading System.dm,195
+  usr: (src)
+  src: null
+  call stack:
+dragonball loaderbs3()
+runtime error: pick() from empty list
+proc name: dragonball loaderbs4 (/proc/dragonball_loaderbs4)
+  source file: Dragonball Loading System.dm,205
+  usr: (src)
+  src: null
+  call stack:
+dragonball loaderbs4()
+runtime error: pick() from empty list
+proc name: dragonball loaderbs5 (/proc/dragonball_loaderbs5)
+  source file: Dragonball Loading System.dm,215
+runtime error: pick() from empty list
+proc name: dragonball loaderbs6 (/proc/dragonball_loaderbs6)
+  source file: Dragonball Loading System.dm,225
+runtime error: pick() from empty list
+proc name: dragonball loaderbs7 (/proc/dragonball_loaderbs7)
+  source file: Dragonball Loading System.dm,235
+runtime error: pick() from empty list
+proc name: dragonball loaderas (/proc/dragonball_loaderas)
+  source file: Dragonball Loading System.dm,254
+runtime error: pick() from empty list
+proc name: dragonball loaderas2 (/proc/dragonball_loaderas2)
+  source file: Dragonball Loading System.dm,264
+runtime error: pick() from empty list
+proc name: dragonball loaderas3 (/proc/dragonball_loaderas3)
+  source file: Dragonball Loading System.dm,274
+runtime error: pick() from empty list
+proc name: dragonball loaderas4 (/proc/dragonball_loaderas4)
+  source file: Dragonball Loading System.dm,284
+runtime error: pick() from empty list
+proc name: dragonball loaderas5 (/proc/dragonball_loaderas5)
+  source file: Dragonball Loading System.dm,294
+runtime error: pick() from empty list
+proc name: dragonball loaderas6 (/proc/dragonball_loaderas6)
+  source file: Dragonball Loading System.dm,304
+runtime error: pick() from empty list
+proc name: dragonball loaderas7 (/proc/dragonball_loaderas7)
+  source file: Dragonball Loading System.dm,314

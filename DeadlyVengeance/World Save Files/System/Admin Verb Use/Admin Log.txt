@@ -41,3 +41,5 @@ Edit:
    Target Information: Key: Drkidvictor - IP Address: 127.0.0.1 - ID: 3504014244
    Date/Time: 03:14:04 02/19/2018
 
+World Opened. 00:00:32 02/20/2018 Host Address: 10.0.0.242.
+World Closed. 00:03:56 02/20/2018 Host Address: 10.0.0.242.

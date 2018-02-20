@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
-LAST_COMPILE_TIME: 1519097982
-DIR: 1.0 System 1.0 System\1.3 Saving and Loading 
+LAST_COMPILE_TIME: 1519106408
+DIR: 3.0 Commands 3.0 Commands\3.2 Combat Commands 3.0 Commands\3.3 Technique Commands 3.0 Commands\3.3 Technique Commands\Basic Techniques 3.0 Commands\3.3 Technique Commands\Basic Techniques\Ki Attack 2.0 Player Character 2.0 Player Character\2.1 Character Attributes 
 AUTO_FILE_DIR: ON
 MAP_ICON_TYPE: 0
 LAST_COMPILE_VERSION: 511.1385
-WINDOW: 1.0 System\1.3 Saving and Loading\Login.dm
-FILE: 1.0 System\1.3 Saving and Loading\Login.dm
+WINDOW: Ki Beam.dm;3.0 Commands\3.3 Technique Commands\Basic Techniques\Ki Attack\Ki Attack.dm;Beam.dmi
+FILE: Ki Beam.dm
 */
 // END_INTERNALS
