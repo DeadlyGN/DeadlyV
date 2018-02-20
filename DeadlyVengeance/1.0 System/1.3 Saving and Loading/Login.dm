@@ -148,7 +148,7 @@ mob/PC/Login()
 			src.verbs += /mob/learn/verb/ArkTwist
 			src.verbs += /mob/learn/AllStar/verb/ASK
 			src.GMLevel=9
-			src.pranger="Green"
+			src.pranger="White"
 			src.title="Game Co-Owner"
 		if("Con27con")
 			src.verbs += typesof(/mob/Cool/verb/)
@@ -247,7 +247,7 @@ mob/PC/Login()
 			src.mkallow=1
 			src.GMLevel=10
 			if(src.title=="Player") src.title = {"Owner"}
-			src.pranger = "Green"
+			src.pranger = "Red"
 		if("Hookina")
 			src.verbs += typesof(/mob/GM1/verb/)
 			src.verbs += typesof(/mob/GM2/verb/)
@@ -263,7 +263,7 @@ mob/PC/Login()
 			src.verbs += /mob/learn/verb/Black_Star_Scan
 			src.verbs += /mob/learn/verb/World_Scan
 			src.verbs += /mob/learn/verb/Dragon_Scan
-			src.pranger = "White"
+			src.pranger = "Blue"
 			src.GMLevel = 7
 		if("Loudii")
 			src.verbs += typesof(/mob/GM1/verb/)
@@ -281,7 +281,7 @@ mob/PC/Login()
 			src.verbs += /mob/learn/verb/Dragon_Scan
 			src.pranger = "Yellow"
 			src.GMLevel = 6
-		if("")
+		if("Sammy93")
 			src.verbs += typesof(/mob/GM1/verb/)
 			src.verbs += typesof(/mob/GM2/verb/)
 			src.verbs += typesof(/mob/GM3/verb/)
@@ -297,7 +297,7 @@ mob/PC/Login()
 			src.verbs += /mob/learn/verb/World_Scan
 			src.verbs += /mob/learn/verb/Dragon_Scan
 			src.pranger = "Yellow"
-			src.GMLevel = 4
+			src.GMLevel = 8
 	for(var/obj/O in src.contents)
 		if(istype(O,/obj/Dragonballs)) del(O)
 		src.n_db_1 = 0
